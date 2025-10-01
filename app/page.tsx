@@ -23,9 +23,9 @@ export default function Home() {
               <Link href="/sobre" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
                 Sobre
               </Link>
-              <Link href="/duvidas" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
-                Dúvidas
-              </Link>
+              {/*<Link href="/duvidas" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+                Dúvidas 
+              </Link>*/}
             </div>
             <button className="md:hidden text-white w-6 h-6 flex items-center justify-center">
               <i className="ri-menu-line text-xl"></i>
