@@ -73,14 +73,14 @@ export default function Home() {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-target-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
-              <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
-            </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+             <i className="ri-target-line text-2xl text-[#1B365D]"></i>
+           </div>
+           <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
+           <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
+         </div>
+
             
             <div className="text-center">
               <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
