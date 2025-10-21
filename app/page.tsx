@@ -47,7 +47,7 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl text-white">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Bem-vindo à Plataforma InGUP360
+              Bem-vindo(a) à Plataforma InGUP360
             </h1>
             <p className="text-xl md:text-2xl mb-10 leading-relaxed">
               A InGUP360 – Plataforma de Competências Gerenciais para a Gestão Universitária – tem como missão apoiar gestores universitários no desenvolvimento de competências essenciais para a excelência na gestão do ensino superior.
