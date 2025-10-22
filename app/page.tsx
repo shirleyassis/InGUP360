@@ -78,7 +78,7 @@ export default function Home() {
       
       <div className="text-center">
         <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-          <i className="ri-target-line text-2xl text-[#1B365D]"></i>
+          <i className="ri-crosshair-2-line text-2xl text-[#1B365D]"></i>
         </div>
         <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
         <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
