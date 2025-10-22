@@ -66,48 +66,52 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
-              Por que escolher nossa plataforma?
-            </h2>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-             <i className="ri-target-line text-2xl text-[#1B365D]"></i>
-           </div>
-           <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
-           <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
-         </div>
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
+        Por que escolher nossa plataforma?
+      </h2>
+    </div>
 
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-lightbulb-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Inovação</h3>
-              <p className="text-gray-600">Metodologias práticas e inovadoras</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-award-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Excelência</h3>
-              <p className="text-gray-600">Elevação da eficiência e qualidade na gestão do ensino superior</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-group-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Comunidade</h3>
-              <p className="text-gray-600">Rede de gestores universitários conectados</p>
-            </div>
-          </div>
+    {/* Grid dos benefícios */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      
+      <div className="text-center">
+        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i className="ri-target-line text-2xl text-[#1B365D]"></i>
         </div>
-      </section>
+        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
+        <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
+      </div>
+
+      <div className="text-center">
+        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i className="ri-lightbulb-line text-2xl text-[#1B365D]"></i>
+        </div>
+        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Inovação</h3>
+        <p className="text-gray-600">Metodologias práticas e inovadoras</p>
+      </div>
+
+      <div className="text-center">
+        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i className="ri-award-line text-2xl text-[#1B365D]"></i>
+        </div>
+        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Excelência</h3>
+        <p className="text-gray-600">Elevação da eficiência e qualidade na gestão do ensino superior</p>
+      </div>
+
+      <div className="text-center">
+        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+          <i className="ri-group-line text-2xl text-[#1B365D]"></i>
+        </div>
+        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Comunidade</h3>
+        <p className="text-gray-600">Rede de gestores universitários conectados</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-[#1B365D]">
@@ -150,5 +154,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
+    ); 
 }
