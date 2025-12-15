@@ -2,8 +2,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function GestaoOrcamentaria() {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
   const handleDownload = (fileName: string, fileType: string) => {
     // Simula o download do arquivo
     const link = document.createElement('a');
@@ -22,22 +25,64 @@ export default function GestaoOrcamentaria() {
               InGUP360
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/"
+                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+              >
                 Início
               </Link>
-              <Link href="/plataforma" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/plataforma"
+                className="text-[#FFD166] font-semibold cursor-pointer"
+              >
                 Plataforma
               </Link>
-              <Link href="/sobre" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/sobre"
+                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+              >
                 Sobre
               </Link>
-              <Link href="/duvidas" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/duvidas"
+                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+              >
                 Dúvidas
               </Link>
             </div>
-            <button className="md:hidden text-white w-6 h-6 flex items-center justify-center">
-              <i className="ri-menu-line text-xl"></i>
-            </button>
+            <div className="md:hidden">
+              <button
+                className="md:hidden text-white w-8 h-8 flex items-center justify-center"
+                aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={mobileOpen}
+                onClick={() => setMobileOpen((s) => !s)}
+              >
+                <i className="ri-menu-line text-xl"></i>
+              </button>
+
+                {/* Mobile menu com animação (sempre renderizado, classes alternadas) */}
+                <div
+                  className={`md:hidden mt-3 absolute left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm bg-[#7a91b1] rounded-lg p-4 shadow-lg z-50 transition-all duration-200 ease-out will-change-transform will-change-opacity ${
+                    mobileOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none border-transparent'
+                  }`}
+                  aria-hidden={!mobileOpen}
+                >
+                  <nav className="flex flex-col gap-3">
+                    <Link href="/" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                      Início
+                    </Link>
+                    <Link href="/plataforma" onClick={() => setMobileOpen(false)} className="text-[#FFD166] font-semibold">
+                      Plataforma
+                    </Link>
+                    <Link href="/sobre" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                      Sobre
+                    </Link>
+                    <Link href="/duvidas" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                      Dúvidas
+                    </Link>
+                  </nav>
+                </div>
+            </div>
           </nav>
         </div>
       </header>

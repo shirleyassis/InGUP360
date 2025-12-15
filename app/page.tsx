@@ -1,46 +1,92 @@
+"use client";
 
-'use client';
-
-import Link from 'next/link';
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
+      
+
       <header className="bg-[#1B365D] shadow-lg">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="text-white font-['Open_Sans'] font-bold text-2xl">
+            <div className="text-white font-['Open_Sans'] text-2xl font-bold">
               InGUP360
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-[#FFD166] font-semibold cursor-pointer">
+              <Link
+                href="/"
+                className="text-[#FFD166] font-semibold transition-colors cursor-pointer"
+              >
                 Início
               </Link>
-              <Link href="/plataforma" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/plataforma"
+                className="text-white hover:text-[#FFD166]  cursor-pointer"
+              >
                 Plataforma
               </Link>
-              <Link href="/sobre" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
+              <Link
+                href="/sobre"
+                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+              >
                 Sobre
               </Link>
-              {/*<Link href="/duvidas" className="text-white hover:text-[#FFD166] transition-colors cursor-pointer">
-                Dúvidas 
-              </Link>*/}
+              <Link
+                href="/duvidas"
+                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+              >
+                Dúvidas
+              </Link>
             </div>
-            <button className="md:hidden text-white w-6 h-6 flex items-center justify-center">
-              <i className="ri-menu-line text-xl"></i>
-            </button>
+            <div className="md:hidden">
+              <button
+                className="md:hidden text-white w-8 h-8 flex items-center justify-center"
+                aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+                aria-expanded={mobileOpen}
+                onClick={() => setMobileOpen((s) => !s)}
+              >
+                <i className="ri-menu-line text-xl"></i>
+              </button>
+
+                {/* Mobile menu com animação (sempre renderizado, classes alternadas) */}
+                <div
+                  className={`md:hidden mt-3 absolute left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm bg-[#7a91b1] rounded-lg p-4 shadow-lg z-50 transition-all duration-200 ease-out will-change-transform will-change-opacity ${
+                    mobileOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none border-transparent'
+                  }`}
+                  aria-hidden={!mobileOpen}
+                >
+                  <nav className="flex flex-col gap-3">
+                    <Link href="/" onClick={() => setMobileOpen(false)} className="text-[#FFD166] font-semibold">
+                      Início
+                    </Link>
+                    <Link href="/plataforma" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166] ">
+                      Plataforma
+                    </Link>
+                    <Link href="/sobre" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                      Sobre
+                    </Link>
+                    <Link href="/duvidas" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                      Dúvidas
+                    </Link>
+                  </nav>
+                </div>
+            </div>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section 
+      <section
         className="relative min-h-[600px] flex items-center"
         style={{
           backgroundImage: `url('https://static.readdy.ai/image/a0e40bb1d6da5d8f8a1e19f04aec7bbc/2bdfba113471e83d6d44adfc17718cb9.jfif')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-[#1B365D]/70"></div>
@@ -50,13 +96,21 @@ export default function Home() {
               Bem-vindo(a) à Plataforma InGUP360
             </h1>
             <p className="text-xl md:text-2xl mb-10 leading-relaxed">
-              A InGUP360 – Plataforma de Competências Gerenciais para a Gestão Universitária – tem como missão apoiar gestores universitários no desenvolvimento de competências essenciais para a excelência na gestão do ensino superior.
+              A InGUP360 – Plataforma de Competências Gerenciais para a Gestão
+              Universitária – tem como missão apoiar gestores universitários no
+              desenvolvimento de competências essenciais para a excelência na
+              gestão do ensino superior.
             </p>
             <p className="text-lg md:text-xl mb-10 leading-relaxed text-[#FFD166]">
-              Aqui você encontrará conteúdos personalizados, materiais complementares e respostas às principais dúvidas sobre gestão acadêmica e administrativa.
+              Aqui você encontrará conteúdos personalizados, materiais
+              complementares e respostas às principais dúvidas sobre gestão
+              acadêmica e administrativa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/plataforma" className="bg-[#FFD166] text-[#1B365D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#FFD166]/90 transition-colors cursor-pointer whitespace-nowrap inline-block text-center">
+              <Link
+                href="/plataforma"
+                className="bg-[#FFD166] text-[#1B365D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#FFD166]/90 transition-colors cursor-pointer whitespace-nowrap inline-block text-center"
+              >
                 ➝ Iniciar Jornada de Conhecimento
               </Link>
             </div>
@@ -66,93 +120,158 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section className="py-20 bg-white">
-  <div className="container mx-auto px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
-        Por que escolher nossa plataforma?
-      </h2>
-    </div>
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
+              Por que escolher nossa plataforma?
+            </h2>
+          </div>
 
-    {/* Grid dos benefícios */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-      
-      <div className="text-center">
-        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-          <i className="ri-crosshair-2-line text-2xl text-[#1B365D]"></i>
+          {/* Grid dos benefícios */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-crosshair-2-line text-2xl text-[#1B365D]"></i>
+              </div>
+              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">
+                Foco Específico
+              </h3>
+              <p className="text-gray-600">
+                Conteúdo direcionado para gestão universitária pública
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-lightbulb-line text-2xl text-[#1B365D]"></i>
+              </div>
+              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">
+                Inovação
+              </h3>
+              <p className="text-gray-600">
+                Metodologias práticas e inovadoras
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-award-line text-2xl text-[#1B365D]"></i>
+              </div>
+              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">
+                Excelência
+              </h3>
+              <p className="text-gray-600">
+                Elevação da eficiência e qualidade na gestão do ensino superior
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-group-line text-2xl text-[#1B365D]"></i>
+              </div>
+              <h3 className="text-lg font-semibold text-[#1B365D] mb-2">
+                Comunidade
+              </h3>
+              <p className="text-gray-600">
+                Rede de gestores universitários conectados
+              </p>
+            </div>
+          </div>
         </div>
-        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Foco Específico</h3>
-        <p className="text-gray-600">Conteúdo direcionado para gestão universitária pública</p>
-      </div>
-
-      <div className="text-center">
-        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-          <i className="ri-lightbulb-line text-2xl text-[#1B365D]"></i>
-        </div>
-        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Inovação</h3>
-        <p className="text-gray-600">Metodologias práticas e inovadoras</p>
-      </div>
-
-      <div className="text-center">
-        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-          <i className="ri-award-line text-2xl text-[#1B365D]"></i>
-        </div>
-        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Excelência</h3>
-        <p className="text-gray-600">Elevação da eficiência e qualidade na gestão do ensino superior</p>
-      </div>
-
-      <div className="text-center">
-        <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
-          <i className="ri-group-line text-2xl text-[#1B365D]"></i>
-        </div>
-        <h3 className="text-lg font-semibold text-[#1B365D] mb-2">Comunidade</h3>
-        <p className="text-gray-600">Rede de gestores universitários conectados</p>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-[#1B365D]">
-        <div className="container mx-auto px-6 text-center">
+        {/* <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Transforme sua gestão universitária
           </h2>
           <p className="text-xl text-[#4F81C7] mb-10 max-w-2xl mx-auto">
             Junte-se a uma comunidade de gestores comprometidos com a excelência no ensino superior público
           </p>
+        </div> */}
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Transforme sua gestão universitária
+          </h2>
+          <p className="text-xl text-white mb-10 max-w-2xl mx-auto">
+            Junte-se a uma comunidade de gestores comprometidos com a excelência
+            no ensino superior público
+          </p>
+          <p className="text-xl text-white max-w-2xl mx-auto">
+            Se sua instituição quer fazer parte desse projeto, compartilhe as
+            boas práticas de gestão, entre em contato através do e-mail abaixo.
+          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1B365D] border-t border-[#4F81C7]/20 py-12">
+      {/* <footer className="bg-[#1B365D] border-t border-[#4F81C7]/20 py-12">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="text-white font-['Open_Sans'] font-bold text-xl mb-4">
               InGUP360
             </div>
             <p className="text-[#4F81C7] mb-6 max-w-2xl mx-auto">
-              Capacitação gerencial para excelência na gestão universitária pública
+              Capacitação gerencial para excelência na gestão universitária
+              pública
             </p>
-            
+
             <div className="mb-6">
               <h4 className="text-white font-semibold mb-2">Contato</h4>
               <p className="text-[#4F81C7]">renata.lfs@ufopa.edu.br</p>
             </div>
           </div>
-          
+
           <div className="border-t border-[#4F81C7]/20 mt-10 pt-8 text-center text-[#4F81C7]">
-            <p>&copy; 2025 InGUP360 – Plataforma de Capacitação Gerencial para Universidades Públicas Federais.</p>
+            <p>
+              &copy; 2025 InGUP360 – Plataforma de Capacitação Gerencial para
+              Universidades Públicas Federais.
+            </p>
             <p className="mt-2">Desenvolvido para fins acadêmicos</p>
             <div className="mt-4">
-              <Link href="https://readdy.ai/?origin=logo" className="text-[#FFD166] hover:text-white transition-colors">
+              <Link
+                href="https://readdy.ai/?origin=logo"
+                className="text-[#FFD166] hover:text-white transition-colors"
+              >
                 Made with Readdy
               </Link>
             </div>
           </div>
         </div>
+      </footer> */}
+      <footer className="bg-[#1B365D] border-t border-[#4F81C7]/20 py-12">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="text-white font-['Open_Sans'] font-bold text-xl mb-4">
+              InGUP360
+            </div>
+            <p className="text-white mb-6 max-w-2xl mx-auto">
+              Capacitação gerencial para excelência na gestão universitária
+              pública
+            </p>
+            <div className="mb-6">
+              <h4 className="text-white font-semibold mb-2">Contato</h4>
+              <p className="text-white">renata.lfs@ufopa.edu.br</p>
+            </div>
+          </div>
+          <div className="border-t border-[#4F81C7]/20 mt-10 pt-8 text-center text-white">
+            <p>
+              © 2025 InGUP360 – Plataforma de Capacitação Gerencial para
+              Universidades Públicas Federais.
+            </p>
+            <p className="mt-2">Desenvolvido para fins acadêmicos</p>
+            <div className="mt-4">
+              <a
+                className="text-[#FFD166] hover:text-white transition-colors"
+                href="https://readdy.ai/?origin=logo"
+              >
+                Made with Readdy
+              </a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-    ); 
+  );
 }
