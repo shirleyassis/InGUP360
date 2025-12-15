@@ -1,7 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
+
+type FAQItem = {
+  pergunta: string;
+  resposta: string;
+};
+
+type TemaDuvida = {
+  tema: string;
+  duvidas: FAQItem[];
+};
 
 export default function FAQ() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -12,7 +22,7 @@ export default function FAQ() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const duvidas = [
+  const duvidas: TemaDuvida[] = [
   {
     "tema": "Orçamento",
     "duvidas": [
@@ -446,9 +456,9 @@ export default function FAQ() {
 
   const [query, setQuery] = useState('');
   // null = sem busca ativa (mostrar lista completa); [] = busca ativa sem resultados; array com itens = resultados
-  const [filtered, setFiltered] = useState(null);
+  const [filtered, setFiltered] = useState<TemaDuvida[] | null>(null);
 
-  const handleSearch = (e:any) => {
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
     const term = query.trim().toLowerCase();
     if (!term) {
@@ -466,7 +476,7 @@ export default function FAQ() {
         }
         return null;
       })
-      .filter(Boolean);
+      .filter((t): t is TemaDuvida => t !== null);
 
     setFiltered(matches);
   };

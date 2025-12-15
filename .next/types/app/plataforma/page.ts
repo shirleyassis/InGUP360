@@ -1,4 +1,4 @@
-// File: C:\Users\fluiz\Downloads\62fe1f36-0f41-467d-9620-74bb61608a55_137\62fe1f36-0f41-467d-9620-74bb61608a55_137\app\plataforma\page.tsx
+// File: C:\GUP\site\app\plataforma\page.tsx
 import * as entry from '../../../../app/plataforma/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

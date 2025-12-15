@@ -16,35 +16,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/duvidas/page": [
+    "/plataforma/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/duvidas/page.js"
+      "static/chunks/app/plataforma/page.js"
     ],
     "/sobre/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/sobre/page.js"
     ],
-    "/plataforma/page": [
+    "/duvidas/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/plataforma/page.js"
+      "static/chunks/app/duvidas/page.js"
     ],
     "/planejamento/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/planejamento/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/gestao-orcamentaria/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/gestao-orcamentaria/page.js"
     ],
     "/lideranca/page": [
       "static/chunks/webpack.js",
