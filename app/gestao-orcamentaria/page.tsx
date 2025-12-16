@@ -1,18 +1,482 @@
-
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
-export default function GestaoOrcamentaria() {
+type FAQItem = {
+  pergunta: string;
+  resposta: string;
+};
+
+type TemaDuvida = {
+  tema: string;
+  duvidas: FAQItem[];
+};
+
+export default function FAQ() {
     const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleDownload = (fileName: string, fileType: string) => {
-    // Simula o download do arquivo
-    const link = document.createElement('a');
-    link.href = '#';
-    link.download = fileName;
-    link.click();
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const duvidas: TemaDuvida[] = [
+  {
+    "tema": "Orçamento",
+    "duvidas": [
+      {
+        "pergunta": "O que é o orçamento público das universidades federais?",
+        "resposta": "O orçamento público é o instrumento que define as receitas e despesas da universidade em determinado exercício financeiro. Ele reflete as prioridades institucionais, expressas na Lei Orçamentária Anual (LOA), e deve estar alinhado ao Plano de Desenvolvimento Institucional (PDI) da universidade."
+      },
+      {
+        "pergunta": "Qual a importância do planejamento orçamentário para a gestão universitária?",
+        "resposta": "O planejamento orçamentário permite que os gestores alinhem os recursos disponíveis às metas institucionais, evitando desperdícios e garantindo maior eficiência na aplicação do orçamento."
+      },
+      {
+        "pergunta": "Como são definidas as prioridades na alocação de recursos?",
+        "resposta": "As prioridades na alocação de recursos são estabelecidas com base nos instrumentos de planejamento institucional. O Plano de Desenvolvimento Institucional (PDI) orienta as diretrizes estratégicas da universidade, definindo metas de longo prazo. O Plano de Desenvolvimento da Unidade (PDU) detalha essas diretrizes no âmbito tático, adequando-as às demandas e objetivos específicos de cada setor. Já o Plano de Gestão Orçamentária (PGO) consolida essas informações ao atribuir os valores orçamentários a cada ação, garantindo que a execução financeira esteja alinhada às prioridades estratégicas e táticas previamente aprovadas."
+      },
+      {
+        "pergunta": "O que são GND’s e quais os tipos com exemplos do que pode ser executado.",
+        "resposta": "“GND” significa Grupo de Natureza da Despesa. No SIOP, estes agrupam elementos de despesa segundo o objeto de gasto. Exemplos: GND 1: Pessoal e Encargos Sociais — para pagamento de servidores, encargos.GND 2: uros e Encargos da Dívida — pagamento de dívida pública.GND 3: Outras Despesas Correntes — material de consumo, serviços terceirizados, manutenção. GND 4: Investimentos — aquisição de bens duráveis, obras, equipamentos. GND 5: Inversões Financeiras — operações como participação societária, aquisição de títulos."
+      },
+      {
+        "pergunta": "O que é um Plano Interno (PI)?",
+        "resposta": "O PI desdobra uma ação orçamentária em níveis mais específicos, possibilitando acompanhar como e onde os recursos estão sendo aplicados dentro da universidade — seja em uma unidade administrativa, um campus, um projeto ou um tipo de despesa. Os Planos Internos são definidos internamente pela instituição, respeitando as normas da Secretaria de Orçamento Federal (SOF) e os limites estabelecidos no Sistema Integrado de Planejamento e Orçamento – SIOP. Para mais informações, acessar a PORTARIA Nº 3, DE 10/12/2021 Sistema Integrado de Planejamento, Orçamentação e Custos ou o manual de orientações da SPO/SE/MEC anexada aos documentos complementares do tema Orçamento desta plataforma."
+      },
+      {
+        "pergunta": "Quais são as fases da execução da despesa pública?",
+        "resposta": "Segundo Paludo (2013) a execução ocorre em três estágios: EMPENHO, LIQUIDAÇÃO e PAGAMENTO. Empenho: corresponde a autorização da despesa e posterior reserva da dotação, uma vez que a nota de empenho fica vinculada a um determinado objeto e fornecedor, em geral, ao que venceu no processo licitatório. Liquidação: onde a instituição se certifica que o produto ou material foi entregue de acordo com as especificidades solicitadas, se os serviços foram realizados conforme o programado e confirma o valor exato a pagar. Pagamento: se refere ao efetivo repasse financeiro para pagar o que foi constatado na liquidação."
+      },
+      {
+        "pergunta": "O que é o empenho e qual a sua importância?",
+        "resposta": "O empenho é o ato que cria a obrigação de pagamento do Estado. Ele garante que há previsão orçamentária para cobrir determinada despesa, evitando a execução de gastos sem autorização.Os empenhos podem ser acompanhados pelos gestores através de Painéis de Gestão, relatórios gerenciais emitidos através do Sistema do Tesouro Gerencial (TG), SIAFI e demais relatórios de acompanhamento implementados pelas Universidades."
+      },
+      {
+        "pergunta": "O que é o empenho e qual a sua importância?",
+        "resposta": "O empenho é o ato que cria a obrigação de pagamento do Estado. Ele garante que há previsão orçamentária para cobrir determinada despesa, evitando a execução de gastos sem autorização.Os empenhos podem ser acompanhados pelos gestores através de Painéis de Gestão, relatórios gerenciais emitidos através do Sistema do Tesouro Gerencial (TG), SIAFI e demais relatórios de acompanhamento implementados pelas Universidades."
+      },
+      {
+        "pergunta": "O que significa “dotação atualizada”?",
+        "resposta": "É o valor total disponível após alterações orçamentárias, como créditos adicionais, remanejamentos ou bloqueios. Representa o orçamento real de que o setor dispõe para executar suas ações"
+      },
+      {
+        "pergunta": "O que significa “crédito disponível”?",
+        "resposta": "É o saldo da dotação atualizada que ainda está comprometido com novas despesas (não empenhado)."
+      },
+      {
+        "pergunta": "Como executar “Restos a Pagar”?",
+        "resposta": "São despesas empenhadas mas não pagas até o dia 31 de dezembro distinguindo-se as processadas (despesas empenhadas e liquidadas) das não processadas (despesas apenas empenhadas e aguardando a liquidação).Lei nº 4.320/1964, art 36; Decreto nº 93.872/1986, art. 67."
+      },
+      {
+        "pergunta": "O que é um remanejamento orçamentário e quando deve ser feito?",
+        "resposta": "O remanejamento é a movimentação de recursos entre ações, grupos de despesas ou elementos de despesa, dentro da mesma instituição. Deve ser realizado para equilibrar dotações e atender novas prioridades, sempre respeitando os limites legais e institucionais."
+      },
+      {
+        "pergunta": "Como acompanhar a execução orçamentária da universidade?",
+        "resposta": "Acompanhar por meio de relatórios do SIAFI, relatórios do Tesouro Gerencial, além de painéis de gestão (como o Painel de Execução Orçamentária da sua Universidade, caso exista). Esses instrumentos permitem o monitoramento tempestivo da execução orçamentária."
+      },
+      {
+        "pergunta": "Como a gestão orçamentária pode promover inovação e eficiência?",
+        "resposta": "Ao adotar práticas modernas de planejamento, controle e monitoramento, a gestão orçamentária pode otimizar o uso de recursos, reduzir retrabalhos e apoiar decisões estratégicas baseadas em dados e realizar os replanejamentos necessários durante o exercício financeiro para otimizar ao máximo o orçamento."
+      },
+      {
+        "pergunta": "Quais boas práticas podem ser adotadas na gestão orçamentária das Ifes?",
+        "resposta": "Uso de painéis e dashboards em Power BI; Criação de controles internos como a implementação de bases de dados históricas do orçamento planejado e executado; Reuniões periódicas de monitoramento com gestores setoriais; Capacitação contínua em orçamento e finanças públicas; Compartilhamento de boas práticas entre Ifes por meio da plataforma InGUP 360."
+      },
+      {
+        "pergunta": "Como a plataforma InGUP 360 pode auxiliar os gestores na gestão orçamentária do setor onde atua?",
+        "resposta": "A plataforma oferece conteúdos didáticos e aplicáveis à realidade das Ifes, permitindo que gestores se capacitem de forma autônoma e a qualquer tempo."
+      }
+    ]
+  },
+  {
+    "tema": "Planejamento",
+    "duvidas": [
+      {
+        "pergunta": "O que é planejamento no contexto das universidades públicas?",
+        "resposta": "O planejamento é a primeira função do processo administrativo e consiste em estabelecer objetivos e definir os recursos necessários para alcançá-los de forma eficaz. Ele orienta a ação institucional, garantindo alinhamento, integração e racionalidade nas decisões."
+      },
+      {
+        "pergunta": "Por que o planejamento é importante para a gestão universitária?",
+        "resposta": "Porque permite alinhar esforços, evitar ações isoladas, garantir organização das atividades, antecipar necessidades e alcançar resultados em consonância com os objetivos institucionais. Também facilita a entrada de novos servidores e promove maior integração setorial."
+      },
+      {
+        "pergunta": "Quais são os níveis de planejamento dentro de uma universidade?",
+        "resposta": "As universidades trabalham com três níveis de planejamento: Estratégico (longo prazo): visão institucional e PDI. Tático (médio prazo): planos de gestão e planos das unidades (PDUs). Operacional (curto prazo): planejamento setorial e planos anuais como o PGO."
+      },
+      {
+        "pergunta": "O que é o Diagnóstico Situacional?",
+        "resposta": "É um processo de levantamento das necessidades, problemas, competências, processos, projetos e recursos de um setor. Ele descreve a situação atual e subsidia intervenções futuras."
+      },
+      {
+        "pergunta": "Por que o diagnóstico é fundamental antes de planejar?",
+        "resposta": "Porque permite identificar lacunas, entender o funcionamento real do setor, definir prioridades, estimar tempos, avaliar retornos e mapear recursos humanos e materiais. Sem diagnóstico, o planejamento torna-se superficial."
+      },
+      {
+        "pergunta": "O que deve ser mapeado no diagnóstico?",
+        "resposta": "O diagnóstico deve incluir: Competências e funções de cada setor; Projetos e serviços existentes; Escopo, custo e prazos dos projetos; Rotinas dos processos; Distribuição da equipe e cargas de trabalho; Forças, fraquezas, oportunidades e ameaças (Matriz SWOT/FOFA). "
+      },
+      {
+        "pergunta": "Quais ferramentas ajudam a elaborar o diagnóstico?",
+        "resposta": "Ferramentas como: Mapeamento de estrutura organizacional (organogramas); Matriz de Responsabilidade; Matriz SWOT (FOFA); Quadro Kanban; Planilhas compartilhadas; Serviços de nuvem institucional."
+      },
+      {
+        "pergunta": "Qual a diferença entre processos e projetos dentro do diagnóstico?",
+        "resposta": "Projetos são temporários e únicos, com início, meio e fim definidos (ex.: eventos, editais, construção de prédio, elaboração do PDI). Processos são contínuos, padronizados, repetitivos e essenciais ao funcionamento rotineiro da unidade (ex.: matrícula, análise de processos, atendimento)."
+      },
+      {
+        "pergunta": "Por que é importante distinguir processos de projetos?",
+        "resposta": "Porque isso ajuda o gestor a: Alocar melhor a equipe; Dimensionar o setor; Identificar sobrecargas; Priorizar intervenções; Definir indicadores apropriados; Implementar melhorias contínuas."
+      },
+      {
+        "pergunta": "Por que mapear as atividades \"que ninguém vê\"?",
+        "resposta": "Essas atividades — como urgências, excesso de reuniões, trocas constantes de prioridade, notificações informais e retrabalho — consomem tempo significativo e afetam o desempenho, mas muitas vezes não são registradas. O diagnóstico ajuda a revelá-las."
+      },
+      {
+        "pergunta": "O que é a Matriz SWOT e para que serve?",
+        "resposta": "É uma ferramenta que analisa fatores internos e externos do setor: Forças – pontos positivos internos; Fraquezas – pontos internos que requerem melhoria; Oportunidades – contextos externos que favorecem o setor; Ameaças – riscos externos fora de controle."
+      },
+      {
+        "pergunta": "Como usar a Matriz SWOT para o planejamento setorial?",
+        "resposta": "Ela orienta a tomada de decisões ao revelar onde o setor está forte, onde precisa melhorar, que oportunidades aproveitar e que ameaças exigir atenção. Serve como base para definir metas e ações do planejamento."
+      },
+      {
+        "pergunta": "O que caracteriza o Planejamento Operacional?",
+        "resposta": "É o plano de curto prazo do setor, contendo atividades, prazos, responsáveis e recursos necessários. Deve ser flexível, sistêmico, interativo e alinhado ao planejamento estratégico e tático, além de focado em antecipar problemas e reduzir riscos."
+      },
+      {
+        "pergunta": "Como iniciar a elaboração do Planejamento Operacional do setor?",
+        "resposta": "O primeiro passo é elaborar ou revisar o diagnóstico situacional, contendo: Mapeamento de pessoal e competências; Análise interna e externa (FOFA); Identificação de serviços, processos e projetos. Esse diagnóstico subsidia a definição de prioridades, metas e ações do planejamento."
+      },
+      {
+        "pergunta": "O que é o ciclo PDCA e como aplicá-lo no planejamento?",
+        "resposta": "O PDCA é uma metodologia composta por quatro etapas: Planejar – definir metas, identificar problemas, analisar causas, elaborar planos de ação; Executar – implementar o plano e treinar equipes; Checar – verificar o atingimento das metas e acompanhar indicadores, comparando planejado x realizado; Agir/Reavaliar – adotar ações corretivas quando necessário e padronizar boas práticas quando os resultados forem satisfatórios."
+      },
+      {
+        "pergunta": "O que é a Matriz GUT e para que serve?",
+        "resposta": "A Matriz GUT é uma ferramenta de priorização baseada em três critérios: Gravidade do problema; Urgência para solução; Tendência de piora. Ela ajuda gestores a decidir quais problemas devem ser tratados primeiro, de forma objetiva e racional."
+      },
+      {
+        "pergunta": "Como aplicar a Matriz GUT no diagnóstico e no planejamento?",
+        "resposta": "O processo envolve: Listar problemas ou pontos de análise; Atribuir notas de 1 a 5 para Gravidade, Urgência e Tendência; Multiplicar os valores (G × U × T) para obter a pontuação; Ordenar os problemas pela pontuação; Definir as ações prioritárias com base nesse ranqueamento."
+      },
+      {
+        "pergunta": "Por que monitorar as ações do planejamento?",
+        "resposta": "Para garantir que as metas sejam cumpridas, ajustar ações em tempo hábil, organizar a rotina de trabalho e fortalecer a cultura de acompanhamento de resultados."
+      },
+      {
+        "pergunta": "O que deve ser monitorado dentro do Planejamento Operacional?",
+        "resposta": "Podem ser monitorados: Programas; Projetos; Atividades; Entregas/produtos do setor; Indicadores; Demandas urgentes e imprevistos."
+      },
+      {
+        "pergunta": "Como deve ser conduzido o monitoramento?",
+        "resposta": "De forma objetiva e não exaustiva, com: Controles claros por responsável e prazo; Reuniões curtas e focadas; Indicadores acessíveis a toda a equipe; Acompanhamento permanente do planejado versus realizado."
+      },
+      {
+        "pergunta": "Por que é necessário fazer reuniões periódicas de acompanhamento?",
+        "resposta": "Porque elas mantêm o foco nas ações prioritárias, consolidam uma cultura de monitoramento, permitem visualizar entregas e ajustes necessários e melhoram a comunicação entre equipes."
+      },
+      {
+        "pergunta": "O que fazer quando uma ação do planejamento não puder ser executada?",
+        "resposta": "O gestor deve replanejar a ação em tempo hábil, revisar prazos e recursos, registrar justificativas e ajustar o plano para garantir o alinhamento institucional e a continuidade dos objetivos."
+      },
+      {
+        "pergunta": "Por que mapear a alocação de pessoas no setor?",
+        "resposta": "Porque isso permite: Identificar sobrecargas e subutilização; Planejar férias, afastamentos e licenças; Entender se a unidade é orientada a projetos, processos ou ambos; Identificar necessidades de capacitação; Planejar substituições e backups, minimizando impactos de mudanças na equipe."
+      },
+      {
+        "pergunta": "Quais ferramentas podem ser usadas no controle, monitoramento e alocação de tarefas?",
+        "resposta": "Podem ser utilizados, por exemplo: Kanban (físico ou digital); Planilhas eletrônicas e planilhas compartilhadas; Serviços de nuvem institucional; Trello; OpenProject; Outras ferramentas de gestão de projetos e tarefas. As ferramentas devem se adequar à realidade e maturidade do setor."
+      },
+      {
+        "pergunta": "Para que serve o Checklist Operacional?",
+        "resposta": "Para mapear rotinas, orientar servidores nas atividades recorrentes, organizar o fluxo de tarefas e acompanhar execuções durante as reuniões. É uma ferramenta simples e eficaz de organização do trabalho diário, semanal, mensal ou anual."
+      },
+      {
+        "pergunta": "Qual a diferença entre planejamento e gerenciamento do planejamento?",
+        "resposta": "Planejar é definir o que deve ser feito, estabelecendo metas, ações e prazos. Gerenciar o planejamento é acompanhar, monitorar, avaliar e ajustar o que foi planejado. Muitos planejamentos falham por falta desse gerenciamento contínuo, resultando no chamado “planejamento de gaveta”."
+      }
+    ]
+  },
+  {
+    "tema": "Gestão de Processos",
+    "duvidas": [
+      {
+        "pergunta": "O que é gestão de processos no contexto universitário?",
+        "resposta": "ÉÉ a prática de conhecer, mapear, padronizar e monitorar processos institucionais para garantir maior controle, eficiência e qualidade na entrega de serviços públicos. A gestão eficiente dos processos é um dos pilares essenciais para o bom funcionamento das universidades públicas."
+      },
+      {
+        "pergunta": "O que são processos organizacionais?",
+        "resposta": "De acordo com Davenport (1994), processos organizacionais são conjuntos estruturados de atividades inter-relacionadas que transformam entradas em saídas, gerando valor para o usuário dos serviços. Em ambientes complexos, como universidades, processos bem definidos facilitam a tomada de decisão."
+      },
+      {
+        "pergunta": "Quais são os elementos fundamentais de um processo?",
+        "resposta": "O material identifica cinco elementos: Entradas – informações ou demandas necessárias para iniciar o processo; Controles – normas, procedimentos e indicadores; Recursos – pessoas, tecnologias e infraestrutura; Processamento – execução das atividades; Saídas – produtos, serviços ou informações geradas."
+      },
+      {
+        "pergunta": "Por que mapear processos?",
+        "resposta": "O mapeamento permite: identificar gargalos e retrabalhos; definir responsabilidades com clareza; padronizar atividades; reduzir erros; aumentar transparência; otimizar tempo e melhorar a fluidez do trabalho."
+      },
+      {
+        "pergunta": "Qual a diferença entre processos e projetos na universidade?",
+        "resposta": "Processos são contínuos, recorrentes e fazem parte da rotina institucional (ex.: emissão de documentos, atendimento, pagamentos). Projetos têm prazo definido, resultado único e caráter temporário (ex.: elaboração de um edital, implantação de um sistema). O gestor deve equilibrar ambos, acompanhando escopo, qualidade e tempo."
+      },
+      {
+        "pergunta": "Quais práticas compõem uma boa gestão de processos?",
+        "resposta": "Destaca-se seis práticas fundamentais: Arquitetura de processos; Mapeamento; Priorização; Modelagem; Transformação; Controle de processos."
+      },
+      {
+        "pergunta": "Como diferenciar o acompanhamento de processos do acompanhamento de projetos?",
+        "resposta": "Processos: foco no nível de serviço (qualidade, eficiência, padronização). Projetos: foco nas entregas (escopo, custo, tempo e resultado)."
+      },
+      {
+        "pergunta": "Qual é o maior desafio da gestão universitária em relação a processos?",
+        "resposta": "Conciliar o acompanhamento simultâneo de projetos e processos, equilibrando demandas permanentes e demandas temporárias sem comprometer a qualidade do serviço."
+      },
+      {
+        "pergunta": "Como realizar o mapeamento de fluxo de um processo?",
+        "resposta": "Perguntas norteadoras incluem: Qual é o objetivo do processo? Quais são as entradas e saídas? Quem são os responsáveis? Quais recursos são utilizados? Quais riscos estão envolvidos? Sugere-se o uso de ferramentas como Bizagi, HEFLO e plataformas de modelagem."
+      },
+      {
+        "pergunta": "Como a gestão de pessoas apoia o gerenciamento de processos?",
+        "resposta": "O gestor deve: diagnosticar necessidades e competências da equipe; alocar servidores conforme habilidades; promover desenvolvimento e capacitação; fortalecer a cultura de melhoria contínua."
+      },
+      {
+        "pergunta": "O que é uma \"entrega\" dentro de um processo?",
+        "resposta": "Segundo o PMBOK, entrega é um produto, serviço ou resultado verificável e produzido para concluir uma fase, um processo ou um projeto. Em termos práticos, é aquilo que o setor efetivamente entrega como resultado do trabalho."
+      },
+      {
+        "pergunta": "Quais são exemplos de produtos (entregas) na universidade?",
+        "resposta": "O documento cita: profissionais capacitados; processos concluídos e aprovados; realização de eventos; implementação de sistemas; relatórios institucionais; finalização de projetos; manutenção de equipamentos; execução de planos de gestão da unidade."
+      },
+      {
+        "pergunta": "Como identificar produtos no meu setor?",
+        "resposta": "O gestor deve se perguntar: Tenho mapeadas as ações macro? Acompanho o andamento das ações relacionadas a cada entrega? As ações foram concluídas? A entrega final está claramente definida? É importante que o gestor apresente à equipe os produtos que estão sendo entregues."
+      },
+      {
+        "pergunta": "Como determinar os principais processos do setor?",
+        "resposta": "Os principais processos são aqueles que impactam diretamente os resultados institucionais e se relacionam às competências e funções do setor. Devem ser identificados de forma estratégica e alinhados ao planejamento."
+      },
+      {
+        "pergunta": "Por que é importante manter os processos mapeados e atualizados?",
+        "resposta": "Para garantir: alinhamento entre setores; continuidade do trabalho mesmo com mudanças de equipe; redução de ruídos e retrabalhos; tomadas de decisão mais ágeis; eficiência institucional."
+      },
+      {
+        "pergunta": "O que significa inovar na gestão de processos?",
+        "resposta": "É reinventar modelos de trabalho para reduzir desperdícios, eliminar retrabalhos e implementar fluxos mais eficientes. Não implica necessariamente em tecnologia nova, mas sim em criar soluções melhores para superar limitações institucionais."
+      }
+    ]
+  },
+  {
+    "tema": "Liderança e Tomada de Decisão no Ensino Superior",
+    "duvidas": [
+      {
+        "pergunta": "O que caracteriza a liderança nas universidades federais?",
+        "resposta": "A liderança nas Ifes exige equilíbrio entre conhecimento técnico, gestão estratégica, gestão de pessoas e capacidade de tomar decisões em ambientes complexos, marcados por diversos colegiados, múltiplos atores e limitações orçamentárias. "
+      },
+      {
+        "pergunta": "Por que o contexto universitário torna a liderança mais desafiadora?",
+        "resposta": "Porque envolve diferentes perfis profissionais, carreiras distintas, disputas acadêmicas e administrativas, processos colegiados e forte dependência de normas legais e institucionais."
+      },
+      {
+        "pergunta": "Quais são os elementos-chave da liderança universitária?",
+        "resposta": "Domínio técnico e compreensão do contexto institucional; Capacidade de articular decisões colegiadas; Atuação baseada nos princípios da administração pública: legalidade, impessoalidade, moralidade, publicidade e eficiência."
+      },
+      {
+        "pergunta": "Quais são os pilares da gestão eficaz para líderes universitários?",
+        "resposta": "Os pilares destacados são: Foco em resultados, com entregas efetivas e respeito ao bem-estar da equipe; Visão de longo prazo, incluindo planejamento e transições gerenciais; Decisões fundamentadas, utilizando informações para lidar com prioridades, restrições e urgências."
+      },
+      {
+        "pergunta": "Quais competências gerenciais são essenciais ao líder público na gestão universitária?",
+        "resposta": "De acordo com o modelo de competências da ENAP, o líder precisa desenvolver competências relacionadas a: Estratégia (visão de futuro, inovação, comunicação estratégica); Resultados (gestão de crises, geração de valor ao usuário, gestão para resultados); Pessoas (engajamento, coordenação em rede, autodesenvolvimento)."
+      },
+      {
+        "pergunta": "Por que a comunicação interna é um fator crítico de sucesso (ou fracasso) na gestão universitária?",
+        "resposta": "Porque falhas na comunicação podem gerar retrabalho, conflitos, ruídos entre setores e ineficiência. Boa comunicação requer clareza nos fluxos, reuniões objetivas, orientações acessíveis e acompanhamento contínuo."
+      },
+      {
+        "pergunta": "Quais são as principais boas práticas para melhorar a comunicação interna?",
+        "resposta": "Reuniões regulares e objetivas com pauta prévia; Informações claras e padronizadas; Relatórios de acompanhamento com indicadores; Definição explícita de atribuições dos servidores."
+      },
+      {
+        "pergunta": "Por que a gestão do tempo é indispensável para líderes universitários?",
+        "resposta": "O tempo é um recurso escasso. Para ser eficaz, o gestor precisa priorizar o que é importante, estabelecer rotinas fixas, delegar tarefas e reservar espaço para análise estratégica, evitando atuar apenas como “apagador de incêndios”."
+      },
+      {
+        "pergunta": "Quais ferramentas auxiliam na gestão do tempo dentro das Ifes?",
+        "resposta": "Seguem algumas sugestões: Matriz de Urgência e Importância; Matriz 5W2H; Quadro Kanban. Essas ferramentas ajudam na priorização e organização das demandas diárias."
+      },
+      {
+        "pergunta": "Quais são os tipos de conflitos mais comuns nas universidades?",
+        "resposta": "Diferenças de expectativas entre novos e antigos servidores; Divergências entre prioridades acadêmicas e administrativas; Sobrecarga de trabalho por falta de clareza nas responsabilidades."
+      },
+      {
+        "pergunta": "Como o gestor pode atuar na resolução de conflitos?",
+        "resposta": "Através de quatro passos: Identificar a causa real; Ouvir todas as partes (escuta ativa/imparcial); Mediar a situação, buscando soluções comuns; Formalizar acordos e acompanhar responsabilidades e prazos."
+      },
+      {
+        "pergunta": "Qual é o papel da liderança estratégica na tomada de decisão?",
+        "resposta": "Segundo Ésther (2011), cabe ao gestor conduzir a instituição em direção aos objetivos definidos, estabelecendo prioridades e mediando conflitos. Decisões estratégicas devem considerar o contexto institucional e os interesses coletivos."
+      },
+      {
+        "pergunta": "O que um gestor deve fazer nos primeiros 30 dias no cargo?",
+        "resposta": "O checklist sugerido recomenda: Mapear equipe, processos, projetos e documentos institucionais (PDI, PDU, regimentos); Levantar demandas urgentes e estratégicas; Estabelecer rotinas de comunicação; Planejar ações para os primeiros 90 dias e plano anual; Criar indicadores simples e monitorar conflitos e riscos."
+      },
+      {
+        "pergunta": "Por que a articulação entre grupos é essencial para liderar universidades?",
+        "resposta": "Porque o gestor precisa integrar diferentes atores (docentes, técnicos, conselhos, estudantes, setores) para promover harmonia institucional, minimizar tensões e garantir o bom funcionamento da gestão universitária."
+      }
+    ]
+  },
+  {
+    "tema": "Gestão de Pessoas",
+    "duvidas": [
+      {
+        "pergunta": "O que é Gestão de Pessoas (GP) no contexto das universidades públicas?",
+        "resposta": "É o conjunto de práticas voltadas a desenvolver, motivar, apoiar e gerir servidores, criando um ambiente de trabalho capaz de alinhar metas individuais aos objetivos institucionais. A GP ultrapassa a administração de equipes: envolve clima, capacitação, liderança, competências e desenvolvimento contínuo."
+      },
+      {
+        "pergunta": "Quais são os principais desafios da Gestão de Pessoas nas Ifes?",
+        "resposta": "Entre os desafios mais recorrentes estão: excesso de burocracia; restrições orçamentárias; dificuldade de atrair e reter talentos; gestão de conflitos e saúde mental; multiplicidade de carreiras e regimes de trabalho; pressão por eficiência; aumento das demandas sem crescimento proporcional do quadro."
+      },
+      {
+        "pergunta": "Quais são as principais responsabilidades de um gestor universitário na área de GP?",
+        "resposta": "O gestor deve: promover bem-estar e mediar conflitos; alinhar a equipe à estratégia institucional; desenvolver e capacitar servidores; estimular liderança transformacional; racionalizar processos e reduzir burocracias."
+      },
+      {
+        "pergunta": "Quais legislações são essenciais para a Gestão de Pessoas nas universidades públicas?",
+        "resposta": "As mais relevantes incluem: Lei nº 8.112/1990 (regime jurídico dos servidores); Decreto nº 9.991/2019 (PNDP e desenvolvimento de pessoas); Normas de PGD, teletrabalho, carreira docente e TAE; Resoluções internas das Ifes."
+      },
+      {
+        "pergunta": "Quais modelos de trabalho existem nas universidades federais?",
+        "resposta": "Presencial; Teletrabalho (remoto) e Híbrido. O gestor deve saber liderar equipes em qualquer modalidade, garantindo produtividade e bem-estar."
+      },
+      {
+        "pergunta": "Quais boas práticas de gestão são recomendadas no teletrabalho?",
+        "resposta": "O material destaca: liderança baseada em empatia; colaboração e reconhecimento; redução de controles excessivos; autonomia com responsabilidade; preservação do senso de equipe; equilíbrio entre desempenho e bem-estar."
+      },
+      {
+        "pergunta": "O que significa gestão por competências?",
+        "resposta": "É a gestão baseada no desenvolvimento e na avaliação de três dimensões: Conhecimentos (saber); Habilidades (fazer); Atitudes (agir). Essa tríade orienta seleção, capacitação e desenvolvimento de servidores."
+      },
+      {
+        "pergunta": "Quais competências a ENAP considera essenciais para gestores públicos?",
+        "resposta": "Segundo o modelo de liderança da ENAP, as competências incluem: visão de futuro; inovação e mudança; comunicação estratégica; gestão de crises; gestão para resultados; coordenação e colaboração em rede; engajamento da equipe; autodesenvolvimento."
+      },
+      {
+        "pergunta": "Por que a capacitação contínua é indispensável para gestores nas Ifes?",
+        "resposta": "Porque permite corrigir lacunas de competências, qualificar entregas e alinhar equipes à estratégia institucional. A capacitação deve seguir diretrizes da PNDP (Decreto 9.991/2019)."
+      },
+      {
+        "pergunta": "Quais tipos de capacitação são mais relevantes para gestores universitários?",
+        "resposta": "Podemos destacar cinco prioridades: Capacitação alinhada aos objetivos estratégicos; Trilhas de aprendizagem e inovação; Planejamento, gestão de processos e projetos; Gestão orçamentária; Gestão de equipes em diferentes modalidades de trabalho."
+      },
+      {
+        "pergunta": "Como a Gestão de Pessoas contribui para o bem-estar e saúde ocupacional?",
+        "resposta": "Ela deve promover: ambientes psicologicamente seguros; ações de qualidade de vida no trabalho; acolhimento e escuta ativa; combate ao assédio moral e sexual."
+      },
+      {
+        "pergunta": "O que é dimensionamento de pessoal e por que é importante nas universidades?",
+        "resposta": "É o instrumento que estima o quantitativo ideal de servidores para realizar as entregas institucionais, considerando contexto, força de trabalho e demandas reais. Ele é fundamental porque: há déficits históricos; existe expansão das Ifes sem recomposição proporcional; há alta carga administrativa e multiplicidade de processos."
+      },
+      {
+        "pergunta": "O que o dimensionamento permite ao gestor?",
+        "resposta": "Permite: identificar gargalos; racionalizar equipes; priorizar setores críticos; justificar solicitações de novas vagas; alinhar equipes ao PDI e às competências individuais."
+      },
+      {
+        "pergunta": "Por que a cultura organizacional é essencial para a Gestão de Pessoas?",
+        "resposta": "Porque a cultura envolve valores, normas, crenças e práticas que moldam comportamentos e decisões. Nas Ifes, ela influencia motivação, inovação, clima organizacional, desempenho e retenção de talentos."
+      },
+      {
+        "pergunta": "Como a cultura organizacional impacta inovação e desempenho?",
+        "resposta": "Culturas abertas à mudança favorecem experimentação e práticas inovadoras. Pesquisas mostram melhorias em: compartilhamento de conhecimento; habilidades interpessoais; clima organizacional; produtividade e engajamento."
+      },
+      {
+        "pergunta": "Por que Gestão de Pessoas é estratégica nas Ifes?",
+        "resposta": "Porque conecta diretamente: desempenho das equipes à eficiência institucional; liderança à clareza e foco em resultados; desenvolvimento por competências à qualidade das entregas; dimensionamento ao equilíbrio da força de trabalho; cultura organizacional à motivação e inovação."
+      }
+    ]
+  },
+  {
+    "tema": "Inovação nas IFES",
+    "duvidas": [
+      {
+        "pergunta": "O que significa inovação na gestão universitária?",
+        "resposta": "Inovação é a implementação de novos produtos, serviços, métodos de trabalho, processos ou práticas organizacionais capazes de melhorar a eficiência e criar valor institucional. Segundo a definição apresentada (OCDE, 1995), a inovação pode ocorrer em: Produtos/Serviços (novos ou aperfeiçoados); Processos; Organização; Marketing."
+      },
+      {
+        "pergunta": "Por que inovar é importante nas Ifes?",
+        "resposta": "Porque as universidades enfrentam desafios complexos: restrições orçamentárias, burocracias, ciclos decisórios longos, legislações rígidas e demandas crescentes. Inovar permite: aprimorar processos; melhorar a entrega de serviços;fortalecer a eficiência institucional; garantir a legalidade e a sustentabilidade das mudanças."
+      },
+      {
+        "pergunta": "Quais são as características específicas da gestão universitária que influenciam a inovação?",
+        "resposta": "Pode-se destacar: obrigatoriedade de seguir legislações federais; sobreposição de processos;administrativos e acadêmicos; tomada de decisão colegiada; ambiente político e cultural robusto; fragmentação entre setores; múltiplas demandas e expectativas de diferentes grupos."
+      },
+      {
+        "pergunta": "Quais são os principais desafios da inovação nas universidades?",
+        "resposta": "Entre os desafios mais recorrentes estão: Processos desconectados, com fluxos sobrepostos; Falta de integração tecnológica, com sistemas isolados; Burocracia, que limita agilidade; Resistência cultural a mudanças; Falta de capacitação em práticas de inovação; Restrições de recursos para implementar melhorias."
+      },
+      {
+        "pergunta": "Onde a inovação aparece no cotidiano do gestor universitário?",
+        "resposta": "A inovação pode surgir em áreas como: Gestão acadêmica, com otimização de fluxos e normativas; Gestão organizacional, com revisões de processos e comunicação interna; Gestão de pessoas, com adoção de PGD e soluções digitais; Processos digitais, como automatização e sistemas integrados; Regulamentos institucionais, como atualização de resoluções e normas internas."
+      },
+      {
+        "pergunta": "Como implementar a inovação na gestão universitária?",
+        "resposta": "A inovação exige mudança cultural e melhoria contínua. Ferramentas sugeridas incluem: PDCA — revisar processos continuamente; 5W2H — planejar ações com clareza; Mapeamento de Processos — compreender fluxos e gargalos; Transparência na gestão — comunicar etapas e resultados."
+      },
+      {
+        "pergunta": "O que é uma cultura de inovação nas IFES?",
+        "resposta": "É um ambiente organizacional que apoia, valoriza e reconhece práticas inovadoras, estimulando colaboração entre setores. Uma cultura de inovação exige: lideranças comprometidas com melhoria contínua; incentivos para novas ideias; compartilhamento de boas práticas; reconhecimento institucional das iniciativas bem-sucedidas."
+      },
+      {
+        "pergunta": "Que práticas podem fortalecer a cultura de inovação dentro da universidade?",
+        "resposta": "Sugere-se: criar um Painel de Boas Práticas para registrar e divulgar iniciativas inovadoras de servidores; promover trocas entre setores; incentivar soluções simples e eficazes no cotidiano; reconhecer a criatividade e o esforço das equipes."
+      },
+      {
+        "pergunta": "Quais são as características de um líder inovador?",
+        "resposta": "O líder inovador possui: Consideração pela equipe, reconhecendo esforços; Tomada de decisão objetiva, com responsabilidade; Flexibilidade, aceitando mudanças e novos métodos; Capacidade de criar conexões, integrando setores e aproximando equipes."
+      },
+      {
+        "pergunta": "A inovação sempre exige tecnologia?",
+        "resposta": "Não. Embora tecnologia possa ser um facilitador, inovar significa melhorar processos, rotinas e práticas, mesmo quando as soluções são simples, organizacionais ou baseadas em mudança comportamental."
+      },
+      {
+        "pergunta": "Por que a resistência cultural é um dos maiores obstáculos à inovação?",
+        "resposta": "Porque a cultura das Ifes tende a valorizar práticas consolidadas, normas rígidas e fluxos burocráticos. Mudanças podem gerar receio, desconfiança ou sensação de perda de controle. Uma cultura de inovação precisa promover segurança psicológica e incentivar experimentação."
+      }
+    ]
+  }];
+
+
+
+  const [query, setQuery] = useState('');
+  // null = sem busca ativa (mostrar lista completa); [] = busca ativa sem resultados; array com itens = resultados
+  const [filtered, setFiltered] = useState<TemaDuvida[] | null>(null);
+
+  const handleSearch = (e: FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
+    const term = query.trim().toLowerCase();
+    if (!term) {
+      setFiltered(null);
+      return;
+    }
+
+    const matches = duvidas
+      .map((temaObj) => {
+        const matchedDuvidas = temaObj.duvidas.filter((q) =>
+          q.pergunta.toLowerCase().includes(term) || (q.resposta && q.resposta.toLowerCase().includes(term))
+        );
+        if (matchedDuvidas.length > 0) {
+          return { ...temaObj, duvidas: matchedDuvidas };
+        }
+        return null;
+      })
+      .filter((t): t is TemaDuvida => t !== null);
+
+    setFiltered(matches);
   };
 
   return (
@@ -33,7 +497,7 @@ export default function GestaoOrcamentaria() {
               </Link>
               <Link
                 href="/plataforma"
-                className="text-[#FFD166] font-semibold cursor-pointer"
+                className="text-white  hover:text-[#FFD166]  cursor-pointer"
               >
                 Plataforma
               </Link>
@@ -45,7 +509,7 @@ export default function GestaoOrcamentaria() {
               </Link>
               <Link
                 href="/duvidas"
-                className="text-white hover:text-[#FFD166] transition-colors cursor-pointer"
+                className="text-[#FFD166] font-semibold transition-colors cursor-pointer"
               >
                 Dúvidas
               </Link>
@@ -71,13 +535,13 @@ export default function GestaoOrcamentaria() {
                     <Link href="/" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
                       Início
                     </Link>
-                    <Link href="/plataforma" onClick={() => setMobileOpen(false)} className="text-[#FFD166] font-semibold">
+                    <Link href="/plataforma" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166] transition-colors">
                       Plataforma
                     </Link>
                     <Link href="/sobre" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
                       Sobre
                     </Link>
-                    <Link href="/duvidas" onClick={() => setMobileOpen(false)} className="text-white hover:text-[#FFD166]">
+                    <Link href="/duvidas" onClick={() => setMobileOpen(false)} className="text-[#FFD166] font-semibold">
                       Dúvidas
                     </Link>
                   </nav>
@@ -91,7 +555,7 @@ export default function GestaoOrcamentaria() {
       <section 
         className="relative min-h-[400px] flex items-center"
         style={{
-          backgroundImage: `url('https://readdy.ai/api/search-image?query=Professional%20university%20finance%20management%20team%20analyzing%20budget%20reports%20and%20financial%20documents%2C%20modern%20office%20environment%20with%20charts%20and%20spreadsheets%2C%20organized%20workspace%20with%20calculators%20and%20planning%20materials%2C%20bright%20professional%20atmosphere%20focused%20on%20financial%20planning%20and%20control&width=1200&height=400&seq=orcamentaria-hero&orientation=landscape')`,
+          backgroundImage: `url('https://readdy.ai/api/search-image?query=Modern%20university%20campus%20with%20students%20and%20faculty%20discussing%20questions%2C%20bright%20and%20welcoming%20academic%20environment%20with%20consultation%20areas%2C%20professional%20educational%20setting%20with%20people%20having%20conversations%2C%20natural%20lighting%2C%20contemporary%20architecture&width=1200&height=400&seq=faq-hero&orientation=landscape')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -99,268 +563,117 @@ export default function GestaoOrcamentaria() {
         <div className="absolute inset-0 bg-[#1B365D]/80"></div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Gestão Orçamentária
+            Dúvidas Frequentes
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-            Ferramentas práticas para controle financeiro e planejamento orçamentário universitário
+          <p className="text-xl md:text-2xl text-[#FFD166] mb-8 max-w-3xl mx-auto">
+            Encontre respostas para as principais questões sobre a plataforma InGUP360
           </p>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Baixe materiais especializados para otimizar a gestão financeira da sua instituição de ensino superior.
+            Nosso objetivo é esclarecer todas as suas dúvidas para que você possa aproveitar ao máximo nossa plataforma de gestão universitária.
           </p>
         </div>
       </section>
 
-      {/* Downloads Section */}
+      {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
-              Materiais para Download
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Acesse ferramentas práticas desenvolvidas especificamente para gestão orçamentária universitária pública.
+          
+          <div className="max-w-4xl mx-auto space-y-4 mb-4">
+            <p className="text-lg font-semibold text-[#1B365D]">
+              Filtre suas dúvidas ou pesquise por temas específicos para encontrar respostas rapidamente.
             </p>
+
+            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-3 mt-2">
+              <label htmlFor="faq-search" className="sr-only">Pesquisar dúvidas</label>
+
+              <div className="relative w-full sm:flex-1">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                  <i className="ri-search-line text-lg"></i>
+                </span>
+
+                <input
+                  id="faq-search"
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Digite uma palavras-chave..."
+                  aria-label="Pesquisar dúvidas"
+                  className="w-full pl-10 pr-4 py-3 border rounded-xl border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#4F81C7]"
+                />
+              </div>
+
+              <div className="flex gap-2">
+                <button
+                  type="submit"
+                  className="bg-[#4F81C7] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#4F81C7]/90 transition-colors whitespace-nowrap"
+                >
+                  Buscar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setQuery(''); setFiltered(null); }}
+                  className="bg-gray-200 text-[#1B365D] px-4 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors whitespace-nowrap"
+                >
+                  Limpar
+                </button>
+              </div>
+            </form>
+          </div>
+                  
+          {/* Lista de dúvidas: mostra a lista filtrada se houver busca ativa, caso contrário mostra todas */}
+          <div className="max-w-4xl mx-auto space-y-4">
+            {(filtered ?? duvidas).map((tema, index) => (
+              <div key={index} className="bg-[#F4F4F4] border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                >
+                  <h3 className="text-lg font-semibold text-[#1B365D] pr-4">{tema.tema}</h3>
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i className={`ri-arrow-down-s-line text-xl text-[#4F81C7] transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}></i>
+                  </div>
+                </button>
+                
+                {openFaq === index && (
+                  <div className="px-6 pb-6">
+                    <div className="border-t border-gray-200 pt-4">
+                      {tema.duvidas.map((faq, subIndex) => (
+                        <div key={subIndex} className="mb-6">
+                          <h4 className="text-md font-semibold text-[#1B365D] mb-2">{faq.pergunta}</h4>
+                          <p className="text-gray-700 leading-relaxed">{faq.resposta}</p>
+                        </div>
+                      ))}
+                    
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Mensagem quando busca ativa e sem resultados */}
+            {Array.isArray(filtered) && filtered?.length === 0 && (
+              <div className="text-center py-8 text-gray-600">
+                Nenhuma dúvida encontrada para "{query}".
+              </div>
+            )}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Gestão Orçamentária Eficiente */}
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-200">
-              <div className="flex items-start mb-6">
-                <div className="w-16 h-16 bg-[#DC3545] rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <i className="ri-presentation-line text-2xl text-white"></i>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Gestão Orçamentária Eficiente
-                  </h3>
-                  <span className="bg-[#FFD166] text-[#1B365D] px-3 py-1 rounded-full text-sm font-semibold">
-                    PPTX
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Apresentação completa com metodologias e estratégias para implementar uma gestão orçamentária eficiente em universidades públicas. Inclui casos práticos, indicadores de desempenho e melhores práticas do setor.
-              </p>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#DC3545] mr-3"></i>
-                  <span>Metodologias de controle orçamentário</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#DC3545] mr-3"></i>
-                  <span>Indicadores de performance financeira</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#DC3545] mr-3"></i>
-                  <span>Casos de sucesso em universidades públicas</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#DC3545] mr-3"></i>
-                  <span>Templates e modelos práticos</span>
-                </div>
-              </div>
-
-              <button 
-                onClick={() => window.open('https://drive.google.com/file/d/1Ad1DmHyRE3LzkrtV5Qn47vZDcltA6sIY/view?usp=sharing', '_blank')}
-                className="w-full bg-[#DC3545] text-white px-6 py-4 rounded-lg hover:bg-[#DC3545]/90 transition-colors cursor-pointer whitespace-nowrap font-semibold flex items-center justify-center"
-              >
-                <i className="ri-download-line mr-2"></i>
-                Baixar Apresentação
-              </button>
+          {/* <div className="text-center mt-16 bg-[#1B365D] rounded-2xl p-8 max-w-2xl mx-auto">
+            <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
+              <i className="ri-question-line text-2xl text-[#1B365D]"></i>
             </div>
-
-            {/* Planilha de Planejamento */}
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-200">
-              <div className="flex items-start mb-6">
-                <div className="w-16 h-16 bg-[#28A745] rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <i className="ri-file-excel-line text-2xl text-white"></i>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Planilha de Planejamento das Unidades
-                  </h3>
-                  <span className="bg-[#28A745] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    XLSX
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Modelo estruturado para planejamento orçamentário de unidades acadêmicas e administrativas. Ferramenta essencial para organizar recursos, definir prioridades e acompanhar execução do orçamento.
-              </p>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Estrutura por unidades acadêmicas</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Categorização de despesas administrativas</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Campos para metas e objetivos</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Controle de execução por período</span>
-                </div>
-              </div>
-
-              <button 
-                onClick={() => window.open('https://docs.google.com/spreadsheets/d/1H-9BlHVsVAE5A-6HYJv0fBAMNMfKGfiQ/edit?usp=sharing&ouid=108870360299279755949&rtpof=true&sd=true', '_blank')}
-                className="w-full bg-[#28A745] text-white px-6 py-4 rounded-lg hover:bg-[#28A745]/90 transition-colors cursor-pointer whitespace-nowrap font-semibold flex items-center justify-center"
-              >
-                <i className="ri-download-line mr-2"></i>
-                Baixar Planilha
-              </button>
-            </div>
-
-            {/* Controle de Aulas de Campo */}
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-200">
-              <div className="flex items-start mb-6">
-                <div className="w-16 h-16 bg-[#4F81C7] rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <i className="ri-map-pin-line text-2xl text-white"></i>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Racional para Controle de Aulas de Campo
-                  </h3>
-                  <span className="bg-[#4F81C7] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    XLSX
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Sistema de controle específico para gestão orçamentária de aulas de campo e atividades práticas externas. Permite rastreamento de custos, logística e prestação de contas dessas atividades acadêmicas.
-              </p>
-
-              <div className="space-y-6 mb-10">
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#4F81C7] mr-3"></i>
-                  <span>Controle de custos por atividade</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#4F81C7] mr-3"></i>
-                  <span>Acompanhamento por curso/disciplina</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className=""></i>
-                  <span>                 </span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className=""></i>
-                  <span>            </span>
-                </div>
-              </div>
-
-              <button 
-                onClick={() => window.open('https://docs.google.com/spreadsheets/d/1IYbTolfQEMoIPzt9eTPazYXsF5DPpD4B/edit?usp=sharing&ouid=108870360299279755949&rtpof=true&sd=true', '_blank')}
-                className="w-full bg-[#4F81C7] text-white px-6 py-4 rounded-lg hover:bg-[#4F81C7]/90 transition-colors cursor-pointer whitespace-nowrap font-semibold flex items-center justify-center"
-              >
-                <i className="ri-download-line mr-2"></i>
-                Baixar Controle
-              </button>
-            </div>
-
-            {/* Relatório de Acompanhamento */}
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 hover:shadow-lg transition-shadow border border-gray-200">
-              <div className="flex items-start mb-6">
-                <div className="w-16 h-16 bg-[#FD7E14] rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <i className="ri-line-chart-line text-2xl text-white"></i>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Relatório de Acompanhamento Orçamentário
-                  </h3>
-                  <span className="bg-[#FD7E14] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    XLSX
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Template completo para geração de relatórios mensais e trimestrais de acompanhamento orçamentário. Facilita a análise de desvios, tendências e tomada de decisões estratégicas na gestão financeira.
-              </p>
-
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#FD7E14] mr-3"></i>
-                  <span>Comparação orçado vs. realizado</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#FD7E14] mr-3"></i>
-                  <span>Análise de desvios por categoria</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#FD7E14] mr-3"></i>
-                  <span>Indicadores de performance</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#FD7E14] mr-3"></i>
-                  <span>Projeções e tendências</span>
-                </div>
-              </div>
-
-              <button 
-                onClick={() => window.open('https://docs.google.com/spreadsheets/d/1QcmPmsdX7UwjZqFxMvlbWFOWCYxP0tq1/edit?usp=sharing&ouid=108870360299279755949&rtpof=true&sd=true', '_blank')}
-                className="w-full bg-[#FD7E14] text-white px-6 py-4 rounded-lg hover:bg-[#FD7E14]/90 transition-colors cursor-pointer whitespace-nowrap font-semibold flex items-center justify-center"
-              >
-                <i className="ri-download-line mr-2"></i>
-                Baixar Relatório
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-[#F4F4F4]">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B365D] mb-6">
-              Vantagens dos Nossos Materiais
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ferramentas desenvolvidas especificamente para o contexto da gestão universitária pública.
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Não encontrou a resposta?
+            </h3>
+            <p className="text-[#FFD166] mb-6">
+              Nossa equipe de suporte está sempre pronta para ajudar você com qualquer dúvida específica.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="ri-shield-check-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-xl font-bold text-[#1B365D] mb-4">Conformidade Legal</h3>
-              <p className="text-gray-600">
-                Todos os materiais seguem as normas e regulamentações específicas do setor público educacional.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="ri-tools-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-xl font-bold text-[#1B365D] mb-4">Fácil Implementação</h3>
-              <p className="text-gray-600">
-                Ferramentas prontas para uso imediato, com instruções claras e exemplos práticos.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="ri-refresh-line text-2xl text-[#1B365D]"></i>
-              </div>
-              <h3 className="text-xl font-bold text-[#1B365D] mb-4">Atualizações Constantes</h3>
-              <p className="text-gray-600">
-                Materiais atualizados regularmente para refletir mudanças na legislação e melhores práticas.
-              </p>
-            </div>
-          </div>
+            <button className="bg-[#FFD166] text-[#1B365D] px-8 py-3 rounded-lg font-semibold hover:bg-[#FFD166]/90 transition-colors cursor-pointer whitespace-nowrap">
+              Entre em Contato
+            </button>
+          </div> */}
         </div>
       </section>
 
@@ -368,15 +681,15 @@ export default function GestaoOrcamentaria() {
       <section className="py-20 bg-[#1B365D]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Transforme sua Gestão Orçamentária
+            Pronto para Começar?
           </h2>
           <p className="text-xl text-[#FFD166] mb-10 max-w-3xl mx-auto">
-            Baixe todos os materiais e implemente práticas eficientes de gestão financeira na sua universidade.
+            Todas as suas dúvidas foram esclarecidas. Agora é hora de transformar sua gestão universitária.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/plataforma">
               <button className="bg-[#FFD166] text-[#1B365D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#FFD166]/90 transition-colors cursor-pointer whitespace-nowrap">
-                Voltar à Plataforma
+                Explorar Plataforma
               </button>
             </Link>
           </div>
