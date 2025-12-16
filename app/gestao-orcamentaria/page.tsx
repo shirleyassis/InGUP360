@@ -182,7 +182,7 @@ export default function GestaoOrcamentaria() {
                     Planilha de Planejamento das Unidades
                   </h3>
                   <span className="bg-[#28A745] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    CSV
+                    XLSX
                   </span>
                 </div>
               </div>
@@ -230,27 +230,19 @@ export default function GestaoOrcamentaria() {
                     Racional para Controle de Aulas de Campo
                   </h3>
                   <span className="bg-[#4F81C7] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    CSV
+                    XLSX
                   </span>
                 </div>
               </div>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Sistema de controle específico para gestão financeira de aulas de campo e atividades práticas externas. Permite rastreamento de custos, logística e prestação de contas dessas atividades acadêmicas.
+                Sistema de controle específico para gestão orçamentária de aulas de campo e atividades práticas externas. Permite rastreamento de custos, logística e prestação de contas dessas atividades acadêmicas.
               </p>
 
               <div className="space-y-3 mb-8">
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#4F81C7] mr-3"></i>
                   <span>Controle de custos por atividade</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#4F81C7] mr-3"></i>
-                  <span>Gestão de transporte e hospedagem</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#4F81C7] mr-3"></i>
-                  <span>Documentação para prestação de contas</span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#4F81C7] mr-3"></i>
@@ -278,7 +270,7 @@ export default function GestaoOrcamentaria() {
                     Relatório de Acompanhamento Orçamentário
                   </h3>
                   <span className="bg-[#FD7E14] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    CSV
+                    XLSX
                   </span>
                 </div>
               </div>
