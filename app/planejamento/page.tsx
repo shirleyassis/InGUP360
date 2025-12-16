@@ -287,11 +287,6 @@ export default function Planejamento() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>O cálculo de prioridade é automático!
-                  </span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
                   <span>Visão panorâmica de todos os projetos em andamento</span>
                 </div>
                 <div className="flex items-center text-gray-700">
