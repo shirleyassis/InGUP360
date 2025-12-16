@@ -284,7 +284,7 @@ export default function Planejamento() {
                 descrito por Chiavenato (2004).
               </p>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-2 mb-4">
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#28A745] mr-3"></i>
                   <span>Visão panorâmica de todos os projetos em andamento</span>
