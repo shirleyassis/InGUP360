@@ -267,7 +267,7 @@ export default function Lideranca() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Planilha Matrix de Urgencia e a Importância na Gestão
+                    Planilha Matriz de Urgência e a importância na Gestão
                     Universitária
                   </h3>
                   <span className="bg-[#28A745] text-white px-3 py-1 rounded-full text-sm font-semibold">
