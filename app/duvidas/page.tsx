@@ -28,11 +28,11 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que é o orçamento público das universidades federais?",
-        "resposta": "É o plano formal de receitas e despesas da universidade para um exercício financeiro, derivado da LOA, que traduz em valores as prioridades definidas nos instrumentos de planejamento institucional, como o PDI."
+        "resposta": "O orçamento público é o instrumento que define as receitas e despesas da universidade em determinado exercício financeiro. Ele reflete as prioridades institucionais, expressas na Lei Orçamentária Anual (LOA), e deve estar alinhado ao Plano de Desenvolvimento Institucional (PDI) da universidade."
       },
       {
         "pergunta": "Qual a importância do planejamento orçamentário para a gestão universitária?",
-        "resposta": "O planejamento orçamentário permite relacionar recursos às metas estratégicas, reduzindo desperdícios, orientando escolhas e garantindo maior eficiência na aplicação dos recursos públicos."
+        "resposta": "O planejamento orçamentário permite que os gestores alinhem os recursos disponíveis às metas institucionais, evitando desperdícios e garantindo maior eficiência na aplicação do orçamento."
       },
       {
         "pergunta": "Como são definidas as prioridades na alocação de recursos?",
