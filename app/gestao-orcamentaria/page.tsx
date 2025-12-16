@@ -250,11 +250,11 @@ export default function GestaoOrcamentaria() {
                 </div>
                 <div className="flex items-center text-gray-700">
                   <i className=""></i>
-                  <span></span>
+                  <span>                 </span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <i className=""></i>
-                  <span></span>
+                  <span>            </span>
                 </div>
               </div>
 
