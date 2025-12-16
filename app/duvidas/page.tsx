@@ -36,13 +36,104 @@ export default function FAQ() {
       },
       {
         "pergunta": "Como são definidas as prioridades na alocação de recursos?",
-        "resposta": "As prioridades são definidas a partir do PDI, detalhadas pelos PDUs das unidades e consolidadas no Plano de Gestão Orçamentária, que distribui os valores entre ações conforme as diretrizes estratégicas aprovadas."
+        "resposta": "As prioridades na alocação de recursos são estabelecidas com base nos instrumentos de planejamento institucional. O Plano de Desenvolvimento Institucional (PDI) orienta as diretrizes estratégicas da universidade, definindo metas de longo prazo. O Plano de Desenvolvimento da Unidade (PDU) detalha essas diretrizes no âmbito tático, adequando-as às demandas e objetivos específicos de cada setor. Já o Plano de Gestão Orçamentária (PGO) consolida essas informações ao atribuir os valores orçamentários a cada ação, garantindo que a execução financeira esteja alinhada às prioridades estratégicas e táticas previamente aprovadas."
       },
       {
-        "pergunta": "Quais os tipos de ações orçamentárias mais utilizadas nas universidades e o que pode ser executado em cada uma?",
-        "resposta": "Em geral, utilizam-se ações ligadas a custeio, investimentos e benefícios a servidores, viabilizando despesas de funcionamento, aquisição de bens, obras, capacitação e demais gastos necessários ao cumprimento da missão institucional."
-      }
-    ]
+        pergunta: "Quais os tipos de ações orçamentárias mais utilizadas nas universidades e o que pode ser executado em cada uma?",
+        resposta: `
+    <table class="w-full border border-gray-300 text-sm">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border px-2 py-1 text-left">Código</th>
+          <th class="border px-2 py-1 text-left">Nome</th>
+          <th class="border px-2 py-1 text-left">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">216H</td>
+          <td class="border px-2 py-1">Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos</td>
+          <td class="border px-2 py-1">
+            Ajuda de custo para moradia ou auxílio-moradia a agentes públicos. Não inclui outras indenizações, tais como ajuda de custo decorrente de remoção e diárias.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">4572</td>
+          <td class="border px-2 py-1">Capacitação de Servidores Públicos Federais em Processo de Qualificação e Requalificação</td>
+          <td class="border px-2 py-1">
+            Realização de ações voltadas à capacitação e desenvolvimento de servidores, tais como: pagamento de Gratificação por Encargo de Curso e Concurso - GECC; custeio para realização de eventos de capacitação; pagamento de passagens e diárias aos servidores, quando em viagem para capacitação; taxa de inscrição em cursos, seminários, congressos e outras despesas relacionadas à capacitação de pessoal.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">2004</td>
+          <td class="border px-2 py-1">Assistência Médica e Odontológica aos Servidores Civis, Empregados, Militares e seus Dependentes</td>
+          <td class="border px-2 py-1">
+            Concessão, em caráter suplementar, do benefício de assistência médico-hospitalar e odontológica aos servidores, militares e empregados, ativos e inativos, dependentes e pensionistas, exclusive pessoal contratado por tempo determinado (Lei nº 8.745, de 9 de dezembro de 1993). A concessão do benefício é exclusiva para a contratação de serviços médicos-hospitalares e odontológicos sob a forma de contrato ou convênio, serviço prestado diretamente pelo órgão ou entidade ou auxílio de caráter indenizatório, por meio de ressarcimento.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">212B</td>
+          <td class="border px-2 py-1">Benefícios Obrigatórios aos Servidores Civis, Empregados, Militares e seus Dependentes</td>
+          <td class="border px-2 py-1">
+            Pagamento dos benefícios obrigatórios devidos aos servidores civis, militares, empregados e seus dependentes, que geralmente destinam-se a compensar, em parte, os gastos decorrentes da atividade laboral.
+            <br /><br />
+            Por serem de natureza genérica e universal, tais benefícios, em geral, possuem paralelos na legislação trabalhista e previdenciária dos trabalhadores da iniciativa privada que desenvolvem funções semelhantes aos públicos.
+            <br /><br />
+            A concessão de benefícios por intermédio desta ação não é extensiva a estagiários, cuja despesa deverá correr à conta das dotações que custeiam as respectivas bolsas de estágio.
+            <br /><br />
+            Nesse sentido, são considerados benefícios obrigatórios os seguintes:
+            <ul class="list-disc ml-5">
+              <li>Auxílio-Alimentação</li>
+              <li>Auxílio-Transporte</li>
+              <li>Assistência Pré-Escolar</li>
+              <li>Auxílio-Funeral</li>
+              <li>Auxílio Natalidade</li>
+              <li>Salário-Família</li>
+              <li>Auxílio-reclusão</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">20TP</td>
+          <td class="border px-2 py-1">Ativos Civis da União</td>
+          <td class="border px-2 py-1">
+            Pagamento de espécies remuneratórias devidas aos servidores e empregados ativos, civis, incluindo os vinculados às forças armadas, aos ex-territórios, ao antigo Estado da Guanabara e os agentes públicos civis, no âmbito do Fundo Constitucional do Distrito Federal.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">20GK</td>
+          <td class="border px-2 py-1">Fomento às Ações de Graduação, Pós-Graduação, Ensino, Pesquisa e Extensão</td>
+          <td class="border px-2 py-1">
+            Desenvolvimento de programas e projetos no âmbito das Instituições de Ensino Superior (IES), Instituições Científicas, Tecnológicas e de Inovação (ICTs), hospitais universitários e da Empresa Brasileira de Serviços Hospitalares (EBSERH) voltados a: pesquisa, tutoria, extensão, inovação e empreendedorismo na graduação e na pós-graduação; implementação de ações educativas e culturais, formação, aperfeiçoamento e pesquisa de interesse do Sistema Nacional de Pós-Graduação (SNPG); incentivo e promoção de ações de integração ensino-serviço-comunidade, em cenários de aprendizagem vinculados ao SUS; apoio à implantação de novas diretrizes curriculares de cursos de graduação no âmbito das IES públicas; apoio à promoção e incentivo à participação em congressos, seminários e simpósios científicos e culturais; apoio a premiação de pesquisadores; bem como demais atividades inerentes às ações de pesquisa, tutoria, extensão, inovação e empreendedorismo.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">20RK</td>
+          <td class="border px-2 py-1">Funcionamento de Instituições Federais de Ensino Superior</td>
+          <td class="border px-2 py-1">
+            Gestão administrativa, financeira e técnica e desenvolvimento de ações para o funcionamento dos cursos de Educação Superior nas modalidades presencial e a distância, tais como serviços; manutenção de infraestrutura física por meio de reforma, adaptação, aquisição ou reposição de materiais, observados os limites da legislação vigente; aquisição de equipamentos e material permanente; promoção da saúde integral e qualidade de vida do servidor; promoção de subsídios para estudos, análises, diagnósticos, pesquisas e publicações científicas; bem como demais atividades necessárias à gestão e administração da unidade.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border px-2 py-1">4002</td>
+          <td class="border px-2 py-1">Assistência ao Estudante de Ensino Superior</td>
+          <td class="border px-2 py-1">
+            Apoio financeiro a ações de assistência estudantil que contribuam para a democratização do ensino superior, a partir da implementação de medidas voltadas à redução das desigualdades sociais e étnicos-raciais, à acessibilidade de portadores de deficiência, à melhoria do desempenho acadêmico e à ampliação das taxas de acesso e permanência na educação superior.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="mt-2"><strong>Fonte:</strong> SIOP.</p>`
+    }
+   ]
   },
   {
     "tema": "Planejamento",
