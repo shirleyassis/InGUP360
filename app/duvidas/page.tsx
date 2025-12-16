@@ -40,7 +40,7 @@ export default function FAQ() {
       },
       {
         "pergunta": "Quais os tipos de ações orçamentárias mais utilizadas nas universidades e o que pode ser executado em cada uma?",
-        "resposta": ""
+        "resposta": " "
       }
     ]
   },
@@ -49,7 +49,7 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que é planejamento no contexto das universidades públicas?",
-        "resposta": "É o processo de definir objetivos, metas e recursos necessários para orientar a atuação da universidade, assegurando coerência entre ações, decisões e a estratégia institucional." "ddndndn"
+        "resposta": "É o processo de definir objetivos, metas e recursos necessários para orientar a atuação da universidade, assegurando coerência entre ações, decisões e a estratégia institucional." 
       },
       {
         "pergunta": "Por que o planejamento é importante para a gestão universitária?",
