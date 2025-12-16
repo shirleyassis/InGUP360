@@ -248,6 +248,14 @@ export default function GestaoOrcamentaria() {
                   <i className="ri-check-line text-[#4F81C7] mr-3"></i>
                   <span>Acompanhamento por curso/disciplina</span>
                 </div>
+                <div className="flex items-center text-gray-700">
+                  <i className=""></i>
+                  <span></span>
+                </div>
+                <div className="flex items-center text-gray-700">
+                  <i className=""></i>
+                  <span></span>
+                </div>
               </div>
 
               <button 
