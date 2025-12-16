@@ -317,7 +317,7 @@ export default function Planejamento() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Planilha de Diagnostico Situacional
+                    Planilha de Diagnóstico Situacional
                   </h3>
                   <span className="bg-[#28A745] text-white px-3 py-1 rounded-full text-sm font-semibold">
                     XLSX
