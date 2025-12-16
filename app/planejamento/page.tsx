@@ -340,7 +340,7 @@ export default function Planejamento() {
                   <span>Facilita a integração de novos servidores
                   </span>
                 </div>
-                
+               </div> 
 
               <button
                 onClick={() =>
