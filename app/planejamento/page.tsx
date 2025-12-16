@@ -332,23 +332,15 @@ export default function Planejamento() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Permite avaliar a execução do planejamento a cada 6 meses
+                  <span>Permite visualizar rapidamente o perfil da equipe, identificar gaps de competências e planejar capacitações específicas
                   </span>
                 </div>
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Visão clara de todas as entregas prometidas no ano
+                  <span>Facilita a integração de novos servidores
                   </span>
                 </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Centraliza informações sobre temas prioritários e seus respectivos cronogramas de trabalho</span>
-                </div>
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Permite detalhar cada ação do setor com máxima precisão</span>
-                </div>
-              </div>
+                
 
               <button
                 onClick={() =>
