@@ -39,8 +39,56 @@ export default function FAQ() {
         "resposta": "As prioridades na alocação de recursos são estabelecidas com base nos instrumentos de planejamento institucional. O Plano de Desenvolvimento Institucional (PDI) orienta as diretrizes estratégicas da universidade, definindo metas de longo prazo. O Plano de Desenvolvimento da Unidade (PDU) detalha essas diretrizes no âmbito tático, adequando-as às demandas e objetivos específicos de cada setor. Já o Plano de Gestão Orçamentária (PGO) consolida essas informações ao atribuir os valores orçamentários a cada ação, garantindo que a execução financeira esteja alinhada às prioridades estratégicas e táticas previamente aprovadas."
       },
       {
-        "pergunta": "Quais os tipos de ações orçamentárias mais utilizadas nas universidades e o que pode ser executado em cada uma?",
-        "resposta": " "
+        "pergunta": "O que são GND’s e quais os tipos com exemplos do que pode ser executado.",
+        "resposta": "“GND” significa Grupo de Natureza da Despesa. No SIOP, estes agrupam elementos de despesa segundo o objeto de gasto. Exemplos: GND 1: Pessoal e Encargos Sociais — para pagamento de servidores, encargos.GND 2: uros e Encargos da Dívida — pagamento de dívida pública.GND 3: Outras Despesas Correntes — material de consumo, serviços terceirizados, manutenção. GND 4: Investimentos — aquisição de bens duráveis, obras, equipamentos. GND 5: Inversões Financeiras — operações como participação societária, aquisição de títulos."
+      },
+      {
+        "pergunta": "O que é um Plano Interno (PI)?",
+        "resposta": "O PI desdobra uma ação orçamentária em níveis mais específicos, possibilitando acompanhar como e onde os recursos estão sendo aplicados dentro da universidade — seja em uma unidade administrativa, um campus, um projeto ou um tipo de despesa. Os Planos Internos são definidos internamente pela instituição, respeitando as normas da Secretaria de Orçamento Federal (SOF) e os limites estabelecidos no Sistema Integrado de Planejamento e Orçamento – SIOP. Para mais informações, acessar a PORTARIA Nº 3, DE 10/12/2021 Sistema Integrado de Planejamento, Orçamentação e Custos ou o manual de orientações da SPO/SE/MEC anexada aos documentos complementares do tema Orçamento desta plataforma."
+      },
+      {
+        "pergunta": "Quais são as fases da execução da despesa pública?",
+        "resposta": "Segundo Paludo (2013) a execução ocorre em três estágios: EMPENHO, LIQUIDAÇÃO e PAGAMENTO. Empenho: corresponde a autorização da despesa e posterior reserva da dotação, uma vez que a nota de empenho fica vinculada a um determinado objeto e fornecedor, em geral, ao que venceu no processo licitatório. Liquidação: onde a instituição se certifica que o produto ou material foi entregue de acordo com as especificidades solicitadas, se os serviços foram realizados conforme o programado e confirma o valor exato a pagar. Pagamento: se refere ao efetivo repasse financeiro para pagar o que foi constatado na liquidação."
+      },
+      {
+        "pergunta": "O que é o empenho e qual a sua importância?",
+        "resposta": "O empenho é o ato que cria a obrigação de pagamento do Estado. Ele garante que há previsão orçamentária para cobrir determinada despesa, evitando a execução de gastos sem autorização.Os empenhos podem ser acompanhados pelos gestores através de Painéis de Gestão, relatórios gerenciais emitidos através do Sistema do Tesouro Gerencial (TG), SIAFI e demais relatórios de acompanhamento implementados pelas Universidades."
+      },
+      {
+        "pergunta": "O que é o empenho e qual a sua importância?",
+        "resposta": "O empenho é o ato que cria a obrigação de pagamento do Estado. Ele garante que há previsão orçamentária para cobrir determinada despesa, evitando a execução de gastos sem autorização.Os empenhos podem ser acompanhados pelos gestores através de Painéis de Gestão, relatórios gerenciais emitidos através do Sistema do Tesouro Gerencial (TG), SIAFI e demais relatórios de acompanhamento implementados pelas Universidades."
+      },
+      {
+        "pergunta": "O que significa “dotação atualizada”?",
+        "resposta": "É o valor total disponível após alterações orçamentárias, como créditos adicionais, remanejamentos ou bloqueios. Representa o orçamento real de que o setor dispõe para executar suas ações"
+      },
+      {
+        "pergunta": "O que significa “crédito disponível”?",
+        "resposta": "É o saldo da dotação atualizada que ainda está comprometido com novas despesas (não empenhado)."
+      },
+      {
+        "pergunta": "Como executar “Restos a Pagar”?",
+        "resposta": "São despesas empenhadas mas não pagas até o dia 31 de dezembro distinguindo-se as processadas (despesas empenhadas e liquidadas) das não processadas (despesas apenas empenhadas e aguardando a liquidação).Lei nº 4.320/1964, art 36; Decreto nº 93.872/1986, art. 67."
+      },
+      {
+        "pergunta": "O que é um remanejamento orçamentário e quando deve ser feito?",
+        "resposta": "O remanejamento é a movimentação de recursos entre ações, grupos de despesas ou elementos de despesa, dentro da mesma instituição. Deve ser realizado para equilibrar dotações e atender novas prioridades, sempre respeitando os limites legais e institucionais."
+      },
+      {
+        "pergunta": "Como acompanhar a execução orçamentária da universidade?",
+        "resposta": "Acompanhar por meio de relatórios do SIAFI, relatórios do Tesouro Gerencial, além de painéis de gestão (como o Painel de Execução Orçamentária da sua Universidade, caso exista). Esses instrumentos permitem o monitoramento tempestivo da execução orçamentária."
+      },
+      {
+        "pergunta": "Como a gestão orçamentária pode promover inovação e eficiência?",
+        "resposta": "Ao adotar práticas modernas de planejamento, controle e monitoramento, a gestão orçamentária pode otimizar o uso de recursos, reduzir retrabalhos e apoiar decisões estratégicas baseadas em dados e realizar os replanejamentos necessários durante o exercício financeiro para otimizar ao máximo o orçamento."
+      },
+      {
+        "pergunta": "Quais boas práticas podem ser adotadas na gestão orçamentária das Ifes?",
+        "resposta": "Uso de painéis e dashboards em Power BI; Criação de controles internos como a implementação de bases de dados históricas do orçamento planejado e executado; Reuniões periódicas de monitoramento com gestores setoriais; Capacitação contínua em orçamento e finanças públicas; Compartilhamento de boas práticas entre Ifes por meio da plataforma InGUP 360."
+      },
+      {
+        "pergunta": "Como a plataforma InGUP 360 pode auxiliar os gestores na gestão orçamentária do setor onde atua?",
+        "resposta": "A plataforma oferece conteúdos didáticos e aplicáveis à realidade das Ifes, permitindo que gestores se capacitem de forma autônoma e a qualquer tempo."
       }
     ]
   },
@@ -49,107 +97,107 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que é planejamento no contexto das universidades públicas?",
-        "resposta": "É o processo de definir objetivos, metas e recursos necessários para orientar a atuação da universidade, assegurando coerência entre ações, decisões e a estratégia institucional." 
+        "resposta": "O planejamento é a primeira função do processo administrativo e consiste em estabelecer objetivos e definir os recursos necessários para alcançá-los de forma eficaz. Ele orienta a ação institucional, garantindo alinhamento, integração e racionalidade nas decisões."
       },
       {
         "pergunta": "Por que o planejamento é importante para a gestão universitária?",
-        "resposta": "Porque organiza esforços, evita iniciativas isoladas, antecipa necessidades e facilita o alcance de resultados alinhados ao PDI, além de apoiar a integração entre setores e a adaptação de novos servidores."
+        "resposta": "Porque permite alinhar esforços, evitar ações isoladas, garantir organização das atividades, antecipar necessidades e alcançar resultados em consonância com os objetivos institucionais. Também facilita a entrada de novos servidores e promove maior integração setorial."
       },
       {
         "pergunta": "Quais são os níveis de planejamento dentro de uma universidade?",
-        "resposta": "Costumam-se adotar três níveis: estratégico (como o PDI, de longo prazo), tático (planos de gestão e PDUs) e operacional (planos setoriais e anuais, como o PGO)."
+        "resposta": "As universidades trabalham com três níveis de planejamento: Estratégico (longo prazo): visão institucional e PDI. Tático (médio prazo): planos de gestão e planos das unidades (PDUs). Operacional (curto prazo): planejamento setorial e planos anuais como o PGO."
       },
       {
         "pergunta": "O que é o Diagnóstico Situacional?",
-        "resposta": "É o levantamento estruturado de problemas, necessidades, processos, projetos, recursos e competências de um setor, que descreve a situação atual e serve de base para propor intervenções."
+        "resposta": "É um processo de levantamento das necessidades, problemas, competências, processos, projetos e recursos de um setor. Ele descreve a situação atual e subsidia intervenções futuras."
       },
       {
         "pergunta": "Por que o diagnóstico é fundamental antes de planejar?",
-        "resposta": "Porque oferece evidências sobre lacunas, capacidades e restrições, evitando planos superficiais e permitindo definir prioridades, prazos e alocação de recursos de forma realista."
+        "resposta": "Porque permite identificar lacunas, entender o funcionamento real do setor, definir prioridades, estimar tempos, avaliar retornos e mapear recursos humanos e materiais. Sem diagnóstico, o planejamento torna-se superficial."
       },
       {
         "pergunta": "O que deve ser mapeado no diagnóstico?",
-        "resposta": "Devem ser identificadas funções dos setores, projetos, serviços, rotinas de processos, distribuição da equipe, cargas de trabalho e fatores internos e externos analisados, por exemplo, via matriz SWOT."
+        "resposta": "O diagnóstico deve incluir: Competências e funções de cada setor; Projetos e serviços existentes; Escopo, custo e prazos dos projetos; Rotinas dos processos; Distribuição da equipe e cargas de trabalho; Forças, fraquezas, oportunidades e ameaças (Matriz SWOT/FOFA). "
       },
       {
         "pergunta": "Quais ferramentas ajudam a elaborar o diagnóstico?",
-        "resposta": "São úteis organogramas, matrizes de responsabilidade, matriz SWOT, quadros Kanban, planilhas compartilhadas e soluções em nuvem institucional para consolidar informações."
+        "resposta": "Ferramentas como: Mapeamento de estrutura organizacional (organogramas); Matriz de Responsabilidade; Matriz SWOT (FOFA); Quadro Kanban; Planilhas compartilhadas; Serviços de nuvem institucional."
       },
       {
         "pergunta": "Qual a diferença entre processos e projetos dentro do diagnóstico?",
-        "resposta": "Projetos são temporários, com início e fim definidos, voltados a resultados únicos; processos são contínuos, padronizados e repetitivos, sustentando as rotinas da unidade."
+        "resposta": "Projetos são temporários e únicos, com início, meio e fim definidos (ex.: eventos, editais, construção de prédio, elaboração do PDI). Processos são contínuos, padronizados, repetitivos e essenciais ao funcionamento rotineiro da unidade (ex.: matrícula, análise de processos, atendimento)."
       },
       {
         "pergunta": "Por que é importante distinguir processos de projetos?",
-        "resposta": "A distinção facilita dimensionar a equipe, identificar sobrecargas, definir indicadores adequados e priorizar melhorias de forma mais precisa."
+        "resposta": "Porque isso ajuda o gestor a: Alocar melhor a equipe; Dimensionar o setor; Identificar sobrecargas; Priorizar intervenções; Definir indicadores apropriados; Implementar melhorias contínuas."
       },
       {
         "pergunta": "Por que mapear as atividades \"que ninguém vê\"?",
-        "resposta": "Porque tarefas informais, urgências, reuniões excessivas e retrabalho consomem tempo e afetam o desempenho, e só podem ser geridas se estiverem visíveis no diagnóstico."
+        "resposta": "Essas atividades — como urgências, excesso de reuniões, trocas constantes de prioridade, notificações informais e retrabalho — consomem tempo significativo e afetam o desempenho, mas muitas vezes não são registradas. O diagnóstico ajuda a revelá-las."
       },
       {
         "pergunta": "O que é a Matriz SWOT e para que serve?",
-        "resposta": "É uma ferramenta que organiza forças, fraquezas, oportunidades e ameaças do setor, auxiliando a leitura integrada de contexto interno e externo."
+        "resposta": "É uma ferramenta que analisa fatores internos e externos do setor: Forças – pontos positivos internos; Fraquezas – pontos internos que requerem melhoria; Oportunidades – contextos externos que favorecem o setor; Ameaças – riscos externos fora de controle."
       },
       {
         "pergunta": "Como usar a Matriz SWOT para o planejamento setorial?",
-        "resposta": "Ela serve como insumo para definir metas e ações, explorando pontos fortes, corrigindo fragilidades, aproveitando oportunidades e mitigando riscos identificados."
+        "resposta": "Ela orienta a tomada de decisões ao revelar onde o setor está forte, onde precisa melhorar, que oportunidades aproveitar e que ameaças exigir atenção. Serve como base para definir metas e ações do planejamento."
       },
       {
         "pergunta": "O que caracteriza o Planejamento Operacional?",
-        "resposta": "Trata-se do plano de curto prazo do setor, com atividades, responsáveis, prazos e recursos definidos, alinhado aos níveis estratégico e tático e voltado a reduzir riscos e antecipar problemas."
+        "resposta": "É o plano de curto prazo do setor, contendo atividades, prazos, responsáveis e recursos necessários. Deve ser flexível, sistêmico, interativo e alinhado ao planejamento estratégico e tático, além de focado em antecipar problemas e reduzir riscos."
       },
       {
         "pergunta": "Como iniciar a elaboração do Planejamento Operacional do setor?",
-        "resposta": "O primeiro passo é atualizar o diagnóstico situacional, mapeando pessoas, competências, serviços, processos e projetos, para então priorizar ações e metas."
+        "resposta": "O primeiro passo é elaborar ou revisar o diagnóstico situacional, contendo: Mapeamento de pessoal e competências; Análise interna e externa (FOFA); Identificação de serviços, processos e projetos. Esse diagnóstico subsidia a definição de prioridades, metas e ações do planejamento."
       },
       {
         "pergunta": "O que é o ciclo PDCA e como aplicá-lo no planejamento?",
-        "resposta": "O PDCA é um ciclo de melhoria contínua com etapas de planejar, executar, checar e agir, que orienta a definição de metas, implementação, monitoramento de resultados e ajustes."
+        "resposta": "O PDCA é uma metodologia composta por quatro etapas: Planejar – definir metas, identificar problemas, analisar causas, elaborar planos de ação; Executar – implementar o plano e treinar equipes; Checar – verificar o atingimento das metas e acompanhar indicadores, comparando planejado x realizado; Agir/Reavaliar – adotar ações corretivas quando necessário e padronizar boas práticas quando os resultados forem satisfatórios."
       },
       {
         "pergunta": "O que é a Matriz GUT e para que serve?",
-        "resposta": "É um instrumento de priorização que avalia problemas segundo gravidade, urgência e tendência, gerando uma pontuação que indica o que tratar primeiro."
+        "resposta": "A Matriz GUT é uma ferramenta de priorização baseada em três critérios: Gravidade do problema; Urgência para solução; Tendência de piora. Ela ajuda gestores a decidir quais problemas devem ser tratados primeiro, de forma objetiva e racional."
       },
       {
         "pergunta": "Como aplicar a Matriz GUT no diagnóstico e no planejamento?",
-        "resposta": "Lista-se os problemas, atribuem-se notas a G, U e T, multiplica-se os valores e ordenam-se os itens para orientar a definição de ações prioritárias."
+        "resposta": "O processo envolve: Listar problemas ou pontos de análise; Atribuir notas de 1 a 5 para Gravidade, Urgência e Tendência; Multiplicar os valores (G × U × T) para obter a pontuação; Ordenar os problemas pela pontuação; Definir as ações prioritárias com base nesse ranqueamento."
       },
       {
         "pergunta": "Por que monitorar as ações do planejamento?",
-        "resposta": "O monitoramento permite verificar o cumprimento de metas, identificar desvios a tempo e ajustar o plano, fortalecendo a cultura de gestão por resultados."
+        "resposta": "Para garantir que as metas sejam cumpridas, ajustar ações em tempo hábil, organizar a rotina de trabalho e fortalecer a cultura de acompanhamento de resultados."
       },
       {
         "pergunta": "O que deve ser monitorado dentro do Planejamento Operacional?",
-        "resposta": "Podem ser acompanhados programas, projetos, atividades, entregas, indicadores e demandas urgentes, organizados de forma a tornar visível o avanço do plano."
+        "resposta": "Podem ser monitorados: Programas; Projetos; Atividades; Entregas/produtos do setor; Indicadores; Demandas urgentes e imprevistos."
       },
       {
         "pergunta": "Como deve ser conduzido o monitoramento?",
-        "resposta": "De modo simples e objetivo, com responsabilidades e prazos claros, reuniões curtas e indicadores acessíveis, comparando o planejado com o realizado."
+        "resposta": "De forma objetiva e não exaustiva, com: Controles claros por responsável e prazo; Reuniões curtas e focadas; Indicadores acessíveis a toda a equipe; Acompanhamento permanente do planejado versus realizado."
       },
       {
         "pergunta": "Por que é necessário fazer reuniões periódicas de acompanhamento?",
-        "resposta": "Porque ajudam a manter foco nas prioridades, revisar o andamento das ações, ajustar rotas e melhorar a comunicação interna."
+        "resposta": "Porque elas mantêm o foco nas ações prioritárias, consolidam uma cultura de monitoramento, permitem visualizar entregas e ajustes necessários e melhoram a comunicação entre equipes."
       },
       {
         "pergunta": "O que fazer quando uma ação do planejamento não puder ser executada?",
-        "resposta": "É preciso replanejar, revisando prazos, recursos e justificativas, registrando as mudanças e preservando o alinhamento com os objetivos institucionais."
+        "resposta": "O gestor deve replanejar a ação em tempo hábil, revisar prazos e recursos, registrar justificativas e ajustar o plano para garantir o alinhamento institucional e a continuidade dos objetivos."
       },
       {
         "pergunta": "Por que mapear a alocação de pessoas no setor?",
-        "resposta": "O mapeamento permite enxergar sobrecargas, planejar substituições, férias e licenças, identificar necessidades de capacitação e avaliar se o setor está orientado a processos, projetos ou ambos."
+        "resposta": "Porque isso permite: Identificar sobrecargas e subutilização; Planejar férias, afastamentos e licenças; Entender se a unidade é orientada a projetos, processos ou ambos; Identificar necessidades de capacitação; Planejar substituições e backups, minimizando impactos de mudanças na equipe."
       },
       {
         "pergunta": "Quais ferramentas podem ser usadas no controle, monitoramento e alocação de tarefas?",
-        "resposta": "Podem ser usados quadros Kanban físicos ou digitais, planilhas, serviços de nuvem e softwares como Trello ou OpenProject, escolhidos conforme a maturidade do setor."
+        "resposta": "Podem ser utilizados, por exemplo: Kanban (físico ou digital); Planilhas eletrônicas e planilhas compartilhadas; Serviços de nuvem institucional; Trello; OpenProject; Outras ferramentas de gestão de projetos e tarefas. As ferramentas devem se adequar à realidade e maturidade do setor."
       },
       {
         "pergunta": "Para que serve o Checklist Operacional?",
-        "resposta": "Serve para organizar rotinas, orientar servidores nas tarefas recorrentes e facilitar o acompanhamento de execuções em reuniões e no dia a dia."
+        "resposta": "Para mapear rotinas, orientar servidores nas atividades recorrentes, organizar o fluxo de tarefas e acompanhar execuções durante as reuniões. É uma ferramenta simples e eficaz de organização do trabalho diário, semanal, mensal ou anual."
       },
       {
         "pergunta": "Qual a diferença entre planejamento e gerenciamento do planejamento?",
-        "resposta": "Planejar é definir o que será feito; gerenciar o planejamento é acompanhar, avaliar e ajustar o plano continuamente, evitando que ele se torne apenas um documento arquivado."
+        "resposta": "Planejar é definir o que deve ser feito, estabelecendo metas, ações e prazos. Gerenciar o planejamento é acompanhar, monitorar, avaliar e ajustar o que foi planejado. Muitos planejamentos falham por falta desse gerenciamento contínuo, resultando no chamado “planejamento de gaveta”."
       }
     ]
   },
@@ -158,67 +206,67 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que é gestão de processos no contexto universitário?",
-        "resposta": "É a abordagem de conhecer, mapear, padronizar e monitorar processos institucionais para elevar controle, eficiência e qualidade na prestação de serviços pelas universidades."
+        "resposta": "ÉÉ a prática de conhecer, mapear, padronizar e monitorar processos institucionais para garantir maior controle, eficiência e qualidade na entrega de serviços públicos. A gestão eficiente dos processos é um dos pilares essenciais para o bom funcionamento das universidades públicas."
       },
       {
         "pergunta": "O que são processos organizacionais?",
-        "resposta": "São conjuntos estruturados de atividades interligadas que transformam insumos em resultados, gerando valor para usuários internos ou externos."
+        "resposta": "De acordo com Davenport (1994), processos organizacionais são conjuntos estruturados de atividades inter-relacionadas que transformam entradas em saídas, gerando valor para o usuário dos serviços. Em ambientes complexos, como universidades, processos bem definidos facilitam a tomada de decisão."
       },
       {
         "pergunta": "Quais são os elementos fundamentais de um processo?",
-        "resposta": "Entradas, controles, recursos, processamento e saídas, compondo o fluxo desde a demanda inicial até o produto ou serviço gerado."
+        "resposta": "O material identifica cinco elementos: Entradas – informações ou demandas necessárias para iniciar o processo; Controles – normas, procedimentos e indicadores; Recursos – pessoas, tecnologias e infraestrutura; Processamento – execução das atividades; Saídas – produtos, serviços ou informações geradas."
       },
       {
         "pergunta": "Por que mapear processos?",
-        "resposta": "Para identificar gargalos e retrabalho, clarificar responsabilidades, padronizar rotinas, reduzir erros, aumentar transparência e otimizar tempo."
+        "resposta": "O mapeamento permite: identificar gargalos e retrabalhos; definir responsabilidades com clareza; padronizar atividades; reduzir erros; aumentar transparência; otimizar tempo e melhorar a fluidez do trabalho."
       },
       {
         "pergunta": "Qual a diferença entre processos e projetos na universidade?",
-        "resposta": "Processos sustentam atividades contínuas e recorrentes; projetos são temporários, com entregas únicas e prazo definido, e exigem acompanhamento de escopo, tempo e custo."
+        "resposta": "Processos são contínuos, recorrentes e fazem parte da rotina institucional (ex.: emissão de documentos, atendimento, pagamentos). Projetos têm prazo definido, resultado único e caráter temporário (ex.: elaboração de um edital, implantação de um sistema). O gestor deve equilibrar ambos, acompanhando escopo, qualidade e tempo."
       },
       {
         "pergunta": "Quais práticas compõem uma boa gestão de processos?",
-        "resposta": "Incluem desenhar a arquitetura de processos, mapear fluxos, priorizar o que será tratado, modelar melhorias, implementar mudanças e controlar o desempenho dos processos."
+        "resposta": "Destaca-se seis práticas fundamentais: Arquitetura de processos; Mapeamento; Priorização; Modelagem; Transformação; Controle de processos."
       },
       {
         "pergunta": "Como diferenciar o acompanhamento de processos do acompanhamento de projetos?",
-        "resposta": "Em processos, o foco está no nível de serviço e padronização; em projetos, o foco recai nas entregas previstas, seus prazos, custos e qualidade."
+        "resposta": "Processos: foco no nível de serviço (qualidade, eficiência, padronização). Projetos: foco nas entregas (escopo, custo, tempo e resultado)."
       },
       {
         "pergunta": "Qual é o maior desafio da gestão universitária em relação a processos?",
-        "resposta": "Equilibrar simultaneamente a gestão de processos permanentes com a execução de múltiplos projetos, garantindo qualidade em ambos."
+        "resposta": "Conciliar o acompanhamento simultâneo de projetos e processos, equilibrando demandas permanentes e demandas temporárias sem comprometer a qualidade do serviço."
       },
       {
         "pergunta": "Como realizar o mapeamento de fluxo de um processo?",
-        "resposta": "Definem-se objetivo, entradas, saídas, responsáveis, recursos e riscos do processo, podendo-se usar ferramentas de modelagem como Bizagi ou HEFLO."
+        "resposta": "Perguntas norteadoras incluem: Qual é o objetivo do processo? Quais são as entradas e saídas? Quem são os responsáveis? Quais recursos são utilizados? Quais riscos estão envolvidos? Sugere-se o uso de ferramentas como Bizagi, HEFLO e plataformas de modelagem."
       },
       {
         "pergunta": "Como a gestão de pessoas apoia o gerenciamento de processos?",
-        "resposta": "Ao diagnosticar competências da equipe, alocar servidores adequadamente, investir em capacitações e estimular cultura de melhoria contínua."
+        "resposta": "O gestor deve: diagnosticar necessidades e competências da equipe; alocar servidores conforme habilidades; promover desenvolvimento e capacitação; fortalecer a cultura de melhoria contínua."
       },
       {
         "pergunta": "O que é uma \"entrega\" dentro de um processo?",
-        "resposta": "É o produto, serviço ou resultado verificável que representa o que o setor efetivamente entrega ao finalizar uma etapa ou processo."
+        "resposta": "Segundo o PMBOK, entrega é um produto, serviço ou resultado verificável e produzido para concluir uma fase, um processo ou um projeto. Em termos práticos, é aquilo que o setor efetivamente entrega como resultado do trabalho."
       },
       {
         "pergunta": "Quais são exemplos de produtos (entregas) na universidade?",
-        "resposta": "Formação de profissionais, processos concluídos, eventos realizados, sistemas implantados, relatórios produzidos, projetos finalizados e manutenção executada."
+        "resposta": "O documento cita: profissionais capacitados; processos concluídos e aprovados; realização de eventos; implementação de sistemas; relatórios institucionais; finalização de projetos; manutenção de equipamentos; execução de planos de gestão da unidade."
       },
       {
         "pergunta": "Como identificar produtos no meu setor?",
-        "resposta": "Ao mapear as ações principais, acompanhar o andamento de cada uma e esclarecer para a equipe quais resultados finais são esperados."
+        "resposta": "O gestor deve se perguntar: Tenho mapeadas as ações macro? Acompanho o andamento das ações relacionadas a cada entrega? As ações foram concluídas? A entrega final está claramente definida? É importante que o gestor apresente à equipe os produtos que estão sendo entregues."
       },
       {
         "pergunta": "Como determinar os principais processos do setor?",
-        "resposta": "Selecionam-se os processos que mais impactam resultados institucionais e se relacionam diretamente às competências e funções da unidade."
+        "resposta": "Os principais processos são aqueles que impactam diretamente os resultados institucionais e se relacionam às competências e funções do setor. Devem ser identificados de forma estratégica e alinhados ao planejamento."
       },
       {
         "pergunta": "Por que é importante manter os processos mapeados e atualizados?",
-        "resposta": "Para assegurar alinhamento entre setores, continuidade mesmo com mudanças de pessoal, menos ruídos e decisões mais ágeis."
+        "resposta": "Para garantir: alinhamento entre setores; continuidade do trabalho mesmo com mudanças de equipe; redução de ruídos e retrabalhos; tomadas de decisão mais ágeis; eficiência institucional."
       },
       {
         "pergunta": "O que significa inovar na gestão de processos?",
-        "resposta": "É redesenhar formas de trabalho para eliminar desperdícios e retrabalho e criar fluxos mais eficientes, com ou sem uso de novas tecnologias."
+        "resposta": "É reinventar modelos de trabalho para reduzir desperdícios, eliminar retrabalhos e implementar fluxos mais eficientes. Não implica necessariamente em tecnologia nova, mas sim em criar soluções melhores para superar limitações institucionais."
       }
     ]
   },
@@ -227,59 +275,59 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que caracteriza a liderança nas universidades federais?",
-        "resposta": "É uma liderança que combina domínio técnico, visão estratégica, gestão de pessoas e capacidade de decidir em contextos colegiados, complexos e com restrições de recursos."
+        "resposta": "A liderança nas Ifes exige equilíbrio entre conhecimento técnico, gestão estratégica, gestão de pessoas e capacidade de tomar decisões em ambientes complexos, marcados por diversos colegiados, múltiplos atores e limitações orçamentárias. "
       },
       {
         "pergunta": "Por que o contexto universitário torna a liderança mais desafiadora?",
-        "resposta": "Porque envolve múltiplas carreiras, interesses acadêmicos e administrativos, forte normatização e processos decisórios compartilhados."
+        "resposta": "Porque envolve diferentes perfis profissionais, carreiras distintas, disputas acadêmicas e administrativas, processos colegiados e forte dependência de normas legais e institucionais."
       },
       {
         "pergunta": "Quais são os elementos-chave da liderança universitária?",
-        "resposta": "Compreensão do contexto institucional, articulação de decisões colegiadas e observância dos princípios da administração pública."
+        "resposta": "Domínio técnico e compreensão do contexto institucional; Capacidade de articular decisões colegiadas; Atuação baseada nos princípios da administração pública: legalidade, impessoalidade, moralidade, publicidade e eficiência."
       },
       {
         "pergunta": "Quais são os pilares da gestão eficaz para líderes universitários?",
-        "resposta": "Foco em resultados com bem-estar da equipe, visão de longo prazo e decisões baseadas em dados e informações confiáveis."
+        "resposta": "Os pilares destacados são: Foco em resultados, com entregas efetivas e respeito ao bem-estar da equipe; Visão de longo prazo, incluindo planejamento e transições gerenciais; Decisões fundamentadas, utilizando informações para lidar com prioridades, restrições e urgências."
       },
       {
         "pergunta": "Quais competências gerenciais são essenciais ao líder público na gestão universitária?",
-        "resposta": "Competências em estratégia, resultados e gestão de pessoas, como visão de futuro, inovação, comunicação estratégica, gestão de crises, engajamento e autodesenvolvimento."
+        "resposta": "De acordo com o modelo de competências da ENAP, o líder precisa desenvolver competências relacionadas a: Estratégia (visão de futuro, inovação, comunicação estratégica); Resultados (gestão de crises, geração de valor ao usuário, gestão para resultados); Pessoas (engajamento, coordenação em rede, autodesenvolvimento)."
       },
       {
         "pergunta": "Por que a comunicação interna é um fator crítico de sucesso (ou fracasso) na gestão universitária?",
-        "resposta": "Porque falhas de comunicação geram retrabalho, conflitos e ruídos entre setores, enquanto fluxos claros e informações acessíveis sustentam a eficiência."
+        "resposta": "Porque falhas na comunicação podem gerar retrabalho, conflitos, ruídos entre setores e ineficiência. Boa comunicação requer clareza nos fluxos, reuniões objetivas, orientações acessíveis e acompanhamento contínuo."
       },
       {
         "pergunta": "Quais são as principais boas práticas para melhorar a comunicação interna?",
-        "resposta": "Realizar reuniões objetivas com pauta definida, padronizar informações, divulgar relatórios de acompanhamento e tornar atribuições bem explicitadas."
+        "resposta": "Reuniões regulares e objetivas com pauta prévia; Informações claras e padronizadas; Relatórios de acompanhamento com indicadores; Definição explícita de atribuições dos servidores."
       },
       {
         "pergunta": "Por que a gestão do tempo é indispensável para líderes universitários?",
-        "resposta": "O gestor precisa priorizar o que é relevante, delegar adequadamente e reservar tempo para reflexão estratégica, evitando atuar apenas de forma reativa."
+        "resposta": "O tempo é um recurso escasso. Para ser eficaz, o gestor precisa priorizar o que é importante, estabelecer rotinas fixas, delegar tarefas e reservar espaço para análise estratégica, evitando atuar apenas como “apagador de incêndios”."
       },
       {
         "pergunta": "Quais ferramentas auxiliam na gestão do tempo dentro das Ifes?",
-        "resposta": "Matrizes de urgência e importância, 5W2H e quadros Kanban ajudam a organizar tarefas, prazos e responsabilidades."
+        "resposta": "Seguem algumas sugestões: Matriz de Urgência e Importância; Matriz 5W2H; Quadro Kanban. Essas ferramentas ajudam na priorização e organização das demandas diárias."
       },
       {
         "pergunta": "Quais são os tipos de conflitos mais comuns nas universidades?",
-        "resposta": "Diferenças de expectativas entre perfis de servidores, divergências entre prioridades acadêmicas e administrativas e sobrecargas decorrentes de funções mal definidas."
+        "resposta": "Diferenças de expectativas entre novos e antigos servidores; Divergências entre prioridades acadêmicas e administrativas; Sobrecarga de trabalho por falta de clareza nas responsabilidades."
       },
       {
         "pergunta": "Como o gestor pode atuar na resolução de conflitos?",
-        "resposta": "Identificando causas reais, ouvindo as partes, mediando soluções conjuntas e formalizando acordos com acompanhamento posterior."
+        "resposta": "Através de quatro passos: Identificar a causa real; Ouvir todas as partes (escuta ativa/imparcial); Mediar a situação, buscando soluções comuns; Formalizar acordos e acompanhar responsabilidades e prazos."
       },
       {
         "pergunta": "Qual é o papel da liderança estratégica na tomada de decisão?",
-        "resposta": "Conduzir a instituição em direção aos objetivos definidos, estabelecendo prioridades e mediando interesses à luz do contexto institucional."
+        "resposta": "Segundo Ésther (2011), cabe ao gestor conduzir a instituição em direção aos objetivos definidos, estabelecendo prioridades e mediando conflitos. Decisões estratégicas devem considerar o contexto institucional e os interesses coletivos."
       },
       {
         "pergunta": "O que um gestor deve fazer nos primeiros 30 dias no cargo?",
-        "resposta": "Mapear equipe, processos e documentos, levantar demandas, organizar rotinas de comunicação, planejar ações para 90 dias e definir indicadores básicos."
+        "resposta": "O checklist sugerido recomenda: Mapear equipe, processos, projetos e documentos institucionais (PDI, PDU, regimentos); Levantar demandas urgentes e estratégicas; Estabelecer rotinas de comunicação; Planejar ações para os primeiros 90 dias e plano anual; Criar indicadores simples e monitorar conflitos e riscos."
       },
       {
         "pergunta": "Por que a articulação entre grupos é essencial para liderar universidades?",
-        "resposta": "Porque a boa gestão depende da integração entre docentes, técnicos, estudantes, conselhos e setores, reduzindo tensões e apoiando o funcionamento institucional."
+        "resposta": "Porque o gestor precisa integrar diferentes atores (docentes, técnicos, conselhos, estudantes, setores) para promover harmonia institucional, minimizar tensões e garantir o bom funcionamento da gestão universitária."
       }
     ]
   },
@@ -288,67 +336,67 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que é Gestão de Pessoas (GP) no contexto das universidades públicas?",
-        "resposta": "É o conjunto de práticas que desenvolvem, motivam e apoiam servidores, alinhando interesses individuais aos objetivos institucionais e valorizando clima, capacitação e liderança."
+        "resposta": "É o conjunto de práticas voltadas a desenvolver, motivar, apoiar e gerir servidores, criando um ambiente de trabalho capaz de alinhar metas individuais aos objetivos institucionais. A GP ultrapassa a administração de equipes: envolve clima, capacitação, liderança, competências e desenvolvimento contínuo."
       },
       {
         "pergunta": "Quais são os principais desafios da Gestão de Pessoas nas Ifes?",
-        "resposta": "Incluem burocracia excessiva, restrições orçamentárias, dificuldades de atrair e reter talentos, questões de saúde mental e múltiplas carreiras e regimes de trabalho."
+        "resposta": "Entre os desafios mais recorrentes estão: excesso de burocracia; restrições orçamentárias; dificuldade de atrair e reter talentos; gestão de conflitos e saúde mental; multiplicidade de carreiras e regimes de trabalho; pressão por eficiência; aumento das demandas sem crescimento proporcional do quadro."
       },
       {
         "pergunta": "Quais são as principais responsabilidades de um gestor universitário na área de GP?",
-        "resposta": "Promover bem-estar, mediar conflitos, alinhar a equipe à estratégia, estimular liderança transformacional e simplificar processos."
+        "resposta": "O gestor deve: promover bem-estar e mediar conflitos; alinhar a equipe à estratégia institucional; desenvolver e capacitar servidores; estimular liderança transformacional; racionalizar processos e reduzir burocracias."
       },
       {
         "pergunta": "Quais legislações são essenciais para a Gestão de Pessoas nas universidades públicas?",
-        "resposta": "Destacam-se a Lei 8.112, o Decreto 9.991 sobre desenvolvimento de pessoas, normas de PGD, teletrabalho, carreira docente e TAE e regulamentos internos."
+        "resposta": "As mais relevantes incluem: Lei nº 8.112/1990 (regime jurídico dos servidores); Decreto nº 9.991/2019 (PNDP e desenvolvimento de pessoas); Normas de PGD, teletrabalho, carreira docente e TAE; Resoluções internas das Ifes."
       },
       {
         "pergunta": "Quais modelos de trabalho existem nas universidades federais?",
-        "resposta": "São adotados os modelos presencial, teletrabalho e híbrido, exigindo liderança adequada em qualquer formato."
+        "resposta": "Presencial; Teletrabalho (remoto) e Híbrido. O gestor deve saber liderar equipes em qualquer modalidade, garantindo produtividade e bem-estar."
       },
       {
         "pergunta": "Quais boas práticas de gestão são recomendadas no teletrabalho?",
-        "resposta": "Liderança empática, reconhecimento, menor controle excessivo, autonomia responsável, preservação do sentimento de equipe e equilíbrio entre desempenho e saúde."
+        "resposta": "O material destaca: liderança baseada em empatia; colaboração e reconhecimento; redução de controles excessivos; autonomia com responsabilidade; preservação do senso de equipe; equilíbrio entre desempenho e bem-estar."
       },
       {
         "pergunta": "O que significa gestão por competências?",
-        "resposta": "É gerir pessoas com base na combinação de conhecimentos, habilidades e atitudes, orientando seleção, capacitação e avaliação."
+        "resposta": "É a gestão baseada no desenvolvimento e na avaliação de três dimensões: Conhecimentos (saber); Habilidades (fazer); Atitudes (agir). Essa tríade orienta seleção, capacitação e desenvolvimento de servidores."
       },
       {
         "pergunta": "Quais competências a ENAP considera essenciais para gestores públicos?",
-        "resposta": "Visão de futuro, inovação, comunicação estratégica, gestão de crises, foco em resultados, coordenação em rede, engajamento e autodesenvolvimento."
+        "resposta": "Segundo o modelo de liderança da ENAP, as competências incluem: visão de futuro; inovação e mudança; comunicação estratégica; gestão de crises; gestão para resultados; coordenação e colaboração em rede; engajamento da equipe; autodesenvolvimento."
       },
       {
         "pergunta": "Por que a capacitação contínua é indispensável para gestores nas Ifes?",
-        "resposta": "Porque reduz lacunas de competência, melhora entregas e garante alinhamento ao que a PNDP estabelece para o desenvolvimento de pessoas."
+        "resposta": "Porque permite corrigir lacunas de competências, qualificar entregas e alinhar equipes à estratégia institucional. A capacitação deve seguir diretrizes da PNDP (Decreto 9.991/2019)."
       },
       {
         "pergunta": "Quais tipos de capacitação são mais relevantes para gestores universitários?",
-        "resposta": "Capacitações alinhadas à estratégia, trilhas de inovação, formação em planejamento, processos, projetos, orçamento e gestão de equipes em diferentes modalidades."
+        "resposta": "Podemos destacar cinco prioridades: Capacitação alinhada aos objetivos estratégicos; Trilhas de aprendizagem e inovação; Planejamento, gestão de processos e projetos; Gestão orçamentária; Gestão de equipes em diferentes modalidades de trabalho."
       },
       {
         "pergunta": "Como a Gestão de Pessoas contribui para o bem-estar e saúde ocupacional?",
-        "resposta": "Ao criar ambientes psicologicamente seguros, promover ações de qualidade de vida, escuta ativa e combate ao assédio."
+        "resposta": "Ela deve promover: ambientes psicologicamente seguros; ações de qualidade de vida no trabalho; acolhimento e escuta ativa; combate ao assédio moral e sexual."
       },
       {
         "pergunta": "O que é dimensionamento de pessoal e por que é importante nas universidades?",
-        "resposta": "É o estudo que estima o quantitativo adequado de servidores para atender às demandas, considerando contexto, força de trabalho e carga de processos."
+        "resposta": "É o instrumento que estima o quantitativo ideal de servidores para realizar as entregas institucionais, considerando contexto, força de trabalho e demandas reais. Ele é fundamental porque: há déficits históricos; existe expansão das Ifes sem recomposição proporcional; há alta carga administrativa e multiplicidade de processos."
       },
       {
         "pergunta": "O que o dimensionamento permite ao gestor?",
-        "resposta": "Permite identificar gargalos, priorizar setores críticos, racionalizar equipes, justificar novos postos e alinhar equipes ao PDI e às competências."
+        "resposta": "Permite: identificar gargalos; racionalizar equipes; priorizar setores críticos; justificar solicitações de novas vagas; alinhar equipes ao PDI e às competências individuais."
       },
       {
         "pergunta": "Por que a cultura organizacional é essencial para a Gestão de Pessoas?",
-        "resposta": "Porque valores, normas e práticas influenciam motivação, clima, desempenho, inovação e retenção de servidores."
+        "resposta": "Porque a cultura envolve valores, normas, crenças e práticas que moldam comportamentos e decisões. Nas Ifes, ela influencia motivação, inovação, clima organizacional, desempenho e retenção de talentos."
       },
       {
         "pergunta": "Como a cultura organizacional impacta inovação e desempenho?",
-        "resposta": "Culturas abertas à mudança tendem a fortalecer compartilhamento de conhecimento, habilidades interpessoais, clima positivo e produtividade."
+        "resposta": "Culturas abertas à mudança favorecem experimentação e práticas inovadoras. Pesquisas mostram melhorias em: compartilhamento de conhecimento; habilidades interpessoais; clima organizacional; produtividade e engajamento."
       },
       {
         "pergunta": "Por que Gestão de Pessoas é estratégica nas Ifes?",
-        "resposta": "Porque conecta desempenho das equipes à eficiência institucional, liga liderança a resultados claros e alinha desenvolvimento e dimensionamento ao alcance da missão."
+        "resposta": "Porque conecta diretamente: desempenho das equipes à eficiência institucional; liderança à clareza e foco em resultados; desenvolvimento por competências à qualidade das entregas; dimensionamento ao equilíbrio da força de trabalho; cultura organizacional à motivação e inovação."
       }
     ]
   },
@@ -357,102 +405,52 @@ export default function FAQ() {
     "duvidas": [
       {
         "pergunta": "O que significa inovação na gestão universitária?",
-        "resposta": "É introduzir novos ou aprimorados produtos, serviços, processos, métodos de trabalho ou práticas organizacionais que aumentem a eficiência e o valor gerado pela universidade."
+        "resposta": "Inovação é a implementação de novos produtos, serviços, métodos de trabalho, processos ou práticas organizacionais capazes de melhorar a eficiência e criar valor institucional. Segundo a definição apresentada (OCDE, 1995), a inovação pode ocorrer em: Produtos/Serviços (novos ou aperfeiçoados); Processos; Organização; Marketing."
       },
       {
         "pergunta": "Por que inovar é importante nas Ifes?",
-        "resposta": "Porque ajuda a enfrentar restrições orçamentárias, burocracia, demandas crescentes e marcos legais rígidos, melhorando serviços e a eficiência institucional."
+        "resposta": "Porque as universidades enfrentam desafios complexos: restrições orçamentárias, burocracias, ciclos decisórios longos, legislações rígidas e demandas crescentes. Inovar permite: aprimorar processos; melhorar a entrega de serviços;fortalecer a eficiência institucional; garantir a legalidade e a sustentabilidade das mudanças."
       },
       {
         "pergunta": "Quais são as características específicas da gestão universitária que influenciam a inovação?",
-        "resposta": "Entre elas estão a necessidade de seguir legislações federais, a sobreposição de processos administrativos e acadêmicos, a decisão colegiada e um ambiente político e cultural complexo."
+        "resposta": "Pode-se destacar: obrigatoriedade de seguir legislações federais; sobreposição de processos;administrativos e acadêmicos; tomada de decisão colegiada; ambiente político e cultural robusto; fragmentação entre setores; múltiplas demandas e expectativas de diferentes grupos."
       },
       {
         "pergunta": "Quais são os principais desafios da inovação nas universidades?",
-        "resposta": "Processos desconectados, sistemas pouco integrados, burocracia, resistência cultural, carência de formação em inovação e limitação de recursos."
+        "resposta": "Entre os desafios mais recorrentes estão: Processos desconectados, com fluxos sobrepostos; Falta de integração tecnológica, com sistemas isolados; Burocracia, que limita agilidade; Resistência cultural a mudanças; Falta de capacitação em práticas de inovação; Restrições de recursos para implementar melhorias."
       },
       {
         "pergunta": "Onde a inovação aparece no cotidiano do gestor universitário?",
-        "resposta": "Em melhorias na gestão acadêmica, organizacional, de pessoas, nos processos digitais e na atualização de normas e regulamentos."
+        "resposta": "A inovação pode surgir em áreas como: Gestão acadêmica, com otimização de fluxos e normativas; Gestão organizacional, com revisões de processos e comunicação interna; Gestão de pessoas, com adoção de PGD e soluções digitais; Processos digitais, como automatização e sistemas integrados; Regulamentos institucionais, como atualização de resoluções e normas internas."
       },
       {
         "pergunta": "Como implementar a inovação na gestão universitária?",
-        "resposta": "Por meio de cultura de melhoria contínua, uso de ferramentas como PDCA, 5W2H, mapeamento de processos e práticas de transparência."
+        "resposta": "A inovação exige mudança cultural e melhoria contínua. Ferramentas sugeridas incluem: PDCA — revisar processos continuamente; 5W2H — planejar ações com clareza; Mapeamento de Processos — compreender fluxos e gargalos; Transparência na gestão — comunicar etapas e resultados."
       },
       {
         "pergunta": "O que é uma cultura de inovação nas IFES?",
-        "resposta": "É um ambiente em que lideranças e equipes valorizam, estimulam e reconhecem iniciativas inovadoras e colaborativas entre setores."
+        "resposta": "É um ambiente organizacional que apoia, valoriza e reconhece práticas inovadoras, estimulando colaboração entre setores. Uma cultura de inovação exige: lideranças comprometidas com melhoria contínua; incentivos para novas ideias; compartilhamento de boas práticas; reconhecimento institucional das iniciativas bem-sucedidas."
       },
       {
         "pergunta": "Que práticas podem fortalecer a cultura de inovação dentro da universidade?",
-        "resposta": "Criar painéis de boas práticas, promover trocas entre setores, incentivar soluções simples do dia a dia e reconhecer publicamente iniciativas bem-sucedidas."
+        "resposta": "Sugere-se: criar um Painel de Boas Práticas para registrar e divulgar iniciativas inovadoras de servidores; promover trocas entre setores; incentivar soluções simples e eficazes no cotidiano; reconhecer a criatividade e o esforço das equipes."
       },
       {
         "pergunta": "Quais são as características de um líder inovador?",
-        "resposta": "Considera e reconhece a equipe, decide com responsabilidade, é flexível a mudanças e cria conexões entre pessoas e setores."
+        "resposta": "O líder inovador possui: Consideração pela equipe, reconhecendo esforços; Tomada de decisão objetiva, com responsabilidade; Flexibilidade, aceitando mudanças e novos métodos; Capacidade de criar conexões, integrando setores e aproximando equipes."
       },
       {
         "pergunta": "A inovação sempre exige tecnologia?",
-        "resposta": "Não; muitas inovações derivam de ajustes organizacionais, mudanças de rotina e novas formas de trabalho, mesmo com baixa tecnologia."
+        "resposta": "Não. Embora tecnologia possa ser um facilitador, inovar significa melhorar processos, rotinas e práticas, mesmo quando as soluções são simples, organizacionais ou baseadas em mudança comportamental."
       },
       {
         "pergunta": "Por que a resistência cultural é um dos maiores obstáculos à inovação?",
-        "resposta": "Porque práticas consolidadas, normas rígidas e receios de mudança podem gerar desconfiança e medo de perda de controle, limitando experimentações."
+        "resposta": "Porque a cultura das Ifes tende a valorizar práticas consolidadas, normas rígidas e fluxos burocráticos. Mudanças podem gerar receio, desconfiança ou sensação de perda de controle. Uma cultura de inovação precisa promover segurança psicológica e incentivar experimentação."
       }
     ]
   }];
 
 
-  // const faqs = [
-  //   {
-  //     question: "Como funciona a trilha de aprendizagem da InGUP360?",
-  //     answer: "A trilha está organizada em 3 temas principais: Planejamento Estratégico, Capacitação e Competências Gerenciais. Cada tema conta com conteúdos especializados, ferramentas práticas e materiais complementares que você pode aplicar diretamente na sua gestão universitária."
-  //   },
-  //   {
-  //     question: "Quais materiais estão disponíveis para download?",
-  //     answer: "Oferecemos planilhas de planejamento, modelos de controle de aulas de campo, relatórios de acompanhamento orçamentário e diversas ferramentas de gestão. Todos os materiais são desenvolvidos especificamente para o contexto universitário público."
-  //   },
-  //   {
-  //     question: "Como posso acessar as ferramentas complementares?",
-  //     answer: "As ferramentas estão integradas na plataforma e podem ser baixadas através dos botões específicos em cada seção. Você encontrará modelos práticos que podem ser customizados para sua instituição."
-  //   },
-  //   {
-  //     question: "A plataforma é específica para universidades públicas?",
-  //     answer: "Sim, todo o conteúdo foi desenvolvido considerando as particularidades da gestão universitária pública, incluindo aspectos orçamentários, regulamentações específicas e desafios únicos do setor público de ensino superior."
-  //   },
-  //   {
-  //     question: "Como posso aplicar os conhecimentos no meu dia a dia?",
-  //     answer: "Cada tema da trilha vem acompanhado de casos práticos, ferramentas aplicáveis e exemplos reais. O conteúdo foi estruturado para que você possa implementar as soluções imediatamente na sua gestão."
-  //   },
-  //   {
-  //     question: "Há suporte disponível durante o uso da plataforma?",
-  //     answer: "Sim, oferecemos suporte completo através da nossa comunidade de gestores e canais de atendimento. Você também terá acesso à documentação completa e materiais de apoio."
-  //   },
-  //   {
-  //     question: "Os materiais são atualizados regularmente?",
-  //     answer: "Sim, nossos conteúdos e ferramentas são constantemente atualizados para refletir as melhores práticas e mudanças no cenário da gestão universitária pública."
-  //   },
-  //   {
-  //     question: "Posso compartilhar os materiais com minha equipe?",
-  //     answer: "Sim, os materiais podem ser compartilhados dentro da sua instituição para uso interno. Isso facilita a implementação das práticas de gestão em toda a sua equipe."
-  //   },
-  //   {
-  //     question: "Como faço para me cadastrar na plataforma?",
-  //     answer: "O cadastro é simples e gratuito. Basta clicar no botão 'Começar Agora' e preencher suas informações básicas. Em poucos minutos você terá acesso completo à plataforma."
-  //   },
-  //   {
-  //     question: "Existe um período de teste gratuito?",
-  //     answer: "Sim, oferecemos acesso completo por 30 dias para que você possa explorar todos os recursos e materiais disponíveis antes de tomar sua decisão."
-  //   },
-  //   {
-  //     question: "A plataforma funciona em dispositivos móveis?",
-  //     answer: "Sim, a InGUP360 é totalmente responsiva e funciona perfeitamente em smartphones, tablets e computadores. Você pode acessar seus materiais a qualquer hora e lugar."
-  //   },
-  //   {
-  //     question: "Como posso entrar em contato com o suporte?",
-  //     answer: "Oferecemos múltiplos canais de suporte: chat online, e-mail e comunidade de usuários. Nossa equipe está sempre pronta para ajudar com qualquer dúvida ou necessidade."
-  //   }
-  // ];
 
   const [query, setQuery] = useState('');
   // null = sem busca ativa (mostrar lista completa); [] = busca ativa sem resultados; array com itens = resultados
@@ -662,7 +660,7 @@ export default function FAQ() {
             )}
           </div>
 
-          <div className="text-center mt-16 bg-[#1B365D] rounded-2xl p-8 max-w-2xl mx-auto">
+          {/* <div className="text-center mt-16 bg-[#1B365D] rounded-2xl p-8 max-w-2xl mx-auto">
             <div className="w-16 h-16 bg-[#FFD166] rounded-full flex items-center justify-center mx-auto mb-4">
               <i className="ri-question-line text-2xl text-[#1B365D]"></i>
             </div>
@@ -675,7 +673,7 @@ export default function FAQ() {
             <button className="bg-[#FFD166] text-[#1B365D] px-8 py-3 rounded-lg font-semibold hover:bg-[#FFD166]/90 transition-colors cursor-pointer whitespace-nowrap">
               Entre em Contato
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
