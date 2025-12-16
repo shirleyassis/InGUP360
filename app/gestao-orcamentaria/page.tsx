@@ -239,7 +239,7 @@ export default function GestaoOrcamentaria() {
                 Sistema de controle específico para gestão orçamentária de aulas de campo e atividades práticas externas. Permite rastreamento de custos, logística e prestação de contas dessas atividades acadêmicas.
               </p>
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-6 mb-10">
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#4F81C7] mr-3"></i>
                   <span>Controle de custos por atividade</span>
