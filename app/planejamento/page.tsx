@@ -119,12 +119,10 @@ export default function Planejamento() {
             Planejamento
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-            Ferramentas práticas para controle financeiro e planejamento
-            orçamentário universitário
+            Ferramentas práticas para elaborar o planejamento do seu setor.
           </p>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Baixe materiais especializados para otimizar a gestão financeira da
-            sua instituição de ensino superior.
+            Baixe materiais especializados para otimizar a gestão da sua instituição de ensino superior.
           </p>
         </div>
       </section>
@@ -138,7 +136,7 @@ export default function Planejamento() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Acesse ferramentas práticas desenvolvidas especificamente para
-              gestão orçamentária universitária pública.
+              o planejamento na universitária pública.
             </p>
           </div>
 
@@ -213,7 +211,7 @@ export default function Planejamento() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                    Diagnostico Situacional
+                    Diagnóstico Situacional
                   </h3>
                   <span className="bg-[#FFD166] text-[#1B365D] px-3 py-1 rounded-full text-sm font-semibold">
                     PDF
@@ -227,7 +225,7 @@ export default function Planejamento() {
                 (carências em termos de preparo profissional) passadas,
                 presentes ou futuras por intermédio de pesquisas internas, a fim
                 de descrever o problema e prescrever uma intervenção. Por que é
-                Necessário?
+                necessário?
               </p>
 
               <div className="space-y-3 mb-8">
@@ -287,11 +285,6 @@ export default function Planejamento() {
               </p>
 
               <div className="space-y-3 mb-8">
-                <div className="flex items-center text-gray-700">
-                  <i className="ri-check-line text-[#28A745] mr-3"></i>
-                  <span>Permite visualizar rapidamente o perfil da equipe, identificar gaps de competências e planejar capacitações específicas.
-                  </span>
-                </div>
                 <div className="flex items-center text-gray-700">
                   <i className="ri-check-line text-[#28A745] mr-3"></i>
                   <span>O cálculo de prioridade é automático!
