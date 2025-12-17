@@ -298,7 +298,7 @@ export default function Planejamento() {
               <button
                 onClick={() =>
                   window.open(
-                    "https://docs.google.com/spreadsheets/d/1OONl3vcM93rEDDNq2B4WYJDeycMq1SHM/edit?usp=drive_link&ouid=116895083691867045715&rtpof=true&sd=true",
+                    "https://docs.google.com/spreadsheets/d/1QGF0cvvonuqGlc4_uiJRMxbCIt4w3UV4/edit?usp=drive_link&ouid=116895083691867045715&rtpof=true&sd=true",
                     "_blank"
                   )
                 }
@@ -345,7 +345,7 @@ export default function Planejamento() {
               <button
                 onClick={() =>
                   window.open(
-                    "https://docs.google.com/spreadsheets/d/1QGF0cvvonuqGlc4_uiJRMxbCIt4w3UV4/edit?usp=drive_link&ouid=116895083691867045715&rtpof=true&sd=true",
+                    "https://docs.google.com/spreadsheets/d/1OONl3vcM93rEDDNq2B4WYJDeycMq1SHM/edit?usp=drive_link&ouid=116895083691867045715&rtpof=true&sd=true",
                     "_blank"
                   )
                 }
